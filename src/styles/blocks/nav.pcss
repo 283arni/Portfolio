@@ -1,0 +1,45 @@
+.nav {
+  margin-left: 100px;
+  @include desktop {
+    margin-left: 0;
+  }
+
+  @include tablets {
+    display: none;
+  }
+}
+
+.nav__footer {
+  display: block;
+}
+
+.nav__list {
+  display: flex;
+  color: $whiter;
+  text-transform: capitalize;
+  
+}
+
+.nav__footer .nav__list {
+  flex-wrap: wrap;
+}
+
+.nav__item {
+  margin-right: 60px;
+
+  @include desktop {
+    margin-right: 70px;
+  }
+
+  @include tablets {
+    margin-bottom: 10px;
+  }
+
+  &:last-child {
+    margin-right: 0px;
+  }
+}
+
+.nav__link:hover {
+  text-decoration: underline;
+}

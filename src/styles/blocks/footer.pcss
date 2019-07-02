@@ -1,0 +1,148 @@
+.footer {
+  background-color: $wrapper;
+  line-height: 1.88;
+}
+
+.footer__wrapper {
+  padding: 78px 0;
+  display: flex;
+}
+
+.footer__creator-site {
+  display: flex;
+  width: 34%;
+
+  @include desktop {
+    flex-direction: column;
+    width: 26%;
+  }
+
+  @include tablets {
+    width: 35%;
+  }
+}
+
+.footer__year {
+  width: 44%;
+  line-height: 1;
+
+  @include desktop {
+    margin-bottom: 25px;
+    width: 100%;
+  }
+
+  & span {
+    display: block;
+    font-size: 48px;
+    font-weight: 600;
+    color: rgba(#whiter, 0.1)
+
+  }
+}
+
+.footer__name {
+  width: 40%;
+
+  @include desktop {
+    width: 100%;
+  }
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+
+  & span {
+      &:first-child {
+    font-size:18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+
+    
+    @include desktop {
+      margin-bottom: 20px;
+    }
+  }
+
+  &:last-child {
+    opacity: 0.15;
+  }
+  }
+}
+
+.footer__main {
+  width: 66%;
+
+  @include desktop {
+    width: 74%;
+  }
+
+  @include tablets {
+    width: 66%;
+  }
+}
+
+
+.footer__info {
+  padding-top: 48px;
+  display: flex;
+  justify-content: space-between;
+  justify-content: flex-start;
+
+  @include desktop {
+    padding-top: 58px;
+  }
+
+  @include tablets {
+    display: block;
+    padding-top: 52px;
+  }
+
+}
+
+.footer__sites,
+.footer__article {
+  width: 42%;
+
+  @include tablets {
+    width: 100%;
+  }
+}
+
+.footer__sites {
+
+  @include tablets {
+    margin-bottom: 65px;
+  }
+}
+
+.footer__sites p {
+  margin-bottom: 22px;
+  opacity: 0.3;
+
+  @include desktop {
+    margin-bottom: 28px;
+  }
+
+  @include tablets {
+    margin-bottom: 15px;
+  }
+}
+
+.footer__sites {
+  @include desktop {
+    margin-right: 30px;
+  }
+}
+
+.footer__socials {
+  display: flex;
+}
+
+.footer__quote {
+  margin-bottom: 18px;
+  opacity: 0.3;
+
+  @include tablets {
+    margin-bottom: 8px;
+  }
+}

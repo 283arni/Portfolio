@@ -1,0 +1,37 @@
+.scroll {
+
+  @include tablets {
+  display: none;
+  }
+}
+
+
+.scroll__container {
+  text-align: center;
+}
+
+.scroll__link {
+  display: inline-flex;
+  color: $whiter;
+  
+}
+
+.scroll__link:hover {
+  color: $item-color;
+  
+}
+
+.scroll__text {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.scroll__svg {
+  width: 35px;
+  height: 30px;
+  fill: $whiter;
+}
+
+.scroll__link:hover .scroll__svg {
+  fill: $item-color;
+}

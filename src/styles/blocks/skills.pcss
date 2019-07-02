@@ -1,0 +1,149 @@
+.skills {
+  background: 0% 120% no-repeat url("../images/content/arms.png") , top/100% no-repeat url("../images/content/bg_skills.png");
+  font-weight: bold;
+
+  @include desktop {
+    background: 0% 100%/30% no-repeat url("../images/content/arms.png") , center/cover no-repeat url("../images/content/bg_skills.png");
+  }
+
+  @include tablets {
+    background: center 101%/50% no-repeat url("../images/content/arms_bottom.png") , center/cover no-repeat url("../images/content/bg_skills.png");
+  }
+}
+
+.skills__container {
+  padding: 220px 0 180px 500px;
+
+    @include desktop {
+      padding: 180px 0 160px 300px;
+    }
+
+    @include tablets {
+      padding: 110px 0 370px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+}
+
+.skills__header {
+  width: 50%;
+  margin-bottom: 84px;
+
+  @include desktop {
+    width: 60%;
+    margin-bottom: 95px;
+  }
+
+  @include tablets {
+    text-align: center;
+    width: 70%;
+    margin-bottom: 50px;
+
+  }
+  & h2 {
+    color: $whiter;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 46px;
+
+    @include desktop {
+      margin-bottom: 53px;
+    }
+
+    @include tablets {
+      
+      width: 50%;
+      margin: auto;
+      margin-bottom: 20px;
+    }
+  }
+  & p {
+    font-weight: 600;
+    opacity: 0.5;
+    line-height: 1.88;
+  }
+}
+
+.skills__power {
+  padding-left: 130px;
+
+  @include desktop {
+    padding-left: 90px;
+  }
+
+  @include tablets {
+    padding-left: 0;
+  }
+}
+
+.skills__front {
+  margin-bottom: 30px;
+
+  @include desktop {
+    margin-bottom: 50px;
+  }
+
+  @include tablets {
+    margin-bottom: 40px;
+  }
+}
+
+.skills__front h3,
+.skills__workflow h3 {
+  color: $whiter;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+
+  @include tablets {
+    font-size: 18px;
+    text-align: center;
+  }
+}
+
+
+.skills__list {
+  display: flex;
+}
+
+.skills__item {
+  position: relative;
+  margin-right: 40px;
+
+  @include tablets {
+    margin-right: 10px;
+  }
+}
+
+
+.skills__svg {
+  width: 160px;
+  height: 160px;
+}
+
+.skills__circle {
+  fill: transparent;
+
+  &-under {
+    stroke-width: 2px;
+    stroke: rgba($whiter, 0.15);
+  }
+  &-above {
+    stroke-width: 6px;
+    stroke: $filling;
+    stroke-dasharray: 251;
+    stroke-dashoffset: 100;
+  }
+}
+
+
+
+.skills__name {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  opacity: 0.5;
+}

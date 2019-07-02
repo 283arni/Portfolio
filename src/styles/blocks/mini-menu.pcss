@@ -1,0 +1,41 @@
+.mini-menu {
+  display: none;
+
+  @include tablets {
+    display: block;
+    margin-left: 115px;
+  }
+}
+
+
+.mini-menu__link {
+  cursor: pointer;
+}
+
+.mini-menu__block {
+  width: 24px;
+  height: 5px;
+  display: block;
+  background-color: $whiter;
+  position: relative;
+}
+
+.mini-menu__block:after {
+  position: absolute;
+  width: 24px;
+  height: 5px;
+  display: block;
+  content: ' ';
+  background-color: $whiter;
+  bottom: 10px;
+}
+
+.mini-menu__block:before {
+  position: absolute;
+  width: 24px;
+  height: 5px;
+  display: block;
+  content: ' ';
+  background-color: $whiter;
+  top: 11px;
+}

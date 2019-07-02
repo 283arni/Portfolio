@@ -1,0 +1,144 @@
+.comments {
+  margin-bottom: 185px;
+
+  @include desktop {
+    margin-bottom: 210px;
+  }
+
+  @include tablets {
+    margin-bottom: 120px;
+  }
+}
+
+.comments__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 90px;
+
+  @include desktop {
+    margin-bottom: 100px;
+  }
+  
+  @include tablets {
+    margin-bottom: 62px;
+  }
+
+
+  & h2 {
+    color: $whiter;
+    margin-right: 95px;
+
+    @include desktop {
+      margin-right: 125px;
+    }
+
+
+  }
+}
+
+.comments__control {
+  display: flex;
+}
+
+.comments__arrow {
+  width: 50px;
+  height: 50px;
+  border: solid 1px $whiter;
+  border-radius: 50%;
+  position: relative;
+
+  &:first-child {
+    margin-right: 30px;
+    @include desktop {
+      margin-right: 40px;
+    }
+  }
+}
+
+.comments__arrow:hover {
+  opacity: 0.5;
+}
+
+.comments__prev-click,
+.comments__next-click {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  fill: $whiter;
+}
+
+.comments__prev-click {
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+
+.comments__list {
+  display: flex;
+  
+}
+
+.comments__item {
+  display: flex;
+  max-width: 500px;
+  padding: 0 30px ;
+
+  @include desktop {
+    padding: 0;
+    margin-right: 30px;
+  }
+
+}
+
+
+
+.comments__icon {
+  min-width: 75px;
+  height: 63px;
+  fill: rgba($whiter, 0.05);
+  margin-right: 25px;
+  
+  @include tablets {
+    min-width: 30px;
+    margin-right: 20px;
+  }
+}
+.comments__text {
+  font-weight: 600;
+  min-height: 120px;
+  color: rgba($whiter, 0.5);
+  margin-bottom: 30px;
+  line-height: 1.88;
+}
+
+.comments__dude {
+  display: flex;
+  align-items: center;
+}
+
+.comments__data {
+  display: flex;
+  flex-direction: column;
+
+  & span:nth-child(1) {
+    font-weight: bold;
+    font-size: 18px;
+    color: $whiter;
+    margin-bottom: 15px;
+  }
+
+  & span:nth-child(2) {
+    font-weight: 600;
+    color: rgba($whiter, 0.3)
+  }
+}
+
+.comments__pic {
+  margin-right: 30px;
+
+}
+
+.comments__img {
+  border-radius: 50%;
+}

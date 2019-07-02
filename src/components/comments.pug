@@ -1,0 +1,34 @@
+section.comments
+  .container
+    .comments__wrapper
+      .comments__header
+        h2.title Что обо мне говорят
+        .comments__control
+          button.comments__arrow(type="button")
+            +icon("arrow-down", "comments__prev-click")
+          button.comments__arrow(type="button")
+            +icon("arrow-down", "comments__next-click")
+      .comments__people
+        ul.comments__list
+          li.comments__item
+            .comments__icon
+              +icon("quote", "comments__svg")
+            .comments__info
+              p.comments__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+              .comments__dude
+                .comments__pic
+                  +image("content/koval.jpg", "comments__img")
+                .comments__data
+                  span Ковальчук Дмитрий
+                  span Основатель Loftschool
+          li.comments__item
+            .comments__icon
+              +icon("quote", "comments__svg")
+            .comments__info
+              p.comments__text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+              .comments__dude
+                .comments__pic
+                  +image("content/saban.jpg", "comments__img")
+                .comments__data
+                  span Владимир Сабанцев
+                  span Преподаватель
