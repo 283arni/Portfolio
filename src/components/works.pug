@@ -7,14 +7,14 @@ section.works
           +image("content/slaid_1.jpg", "works__img")
           .works__mini-slaider
             ul.works__mini-slaider-list
-              li.works__mini-slaider-item.works__mini-slaider-active
-                +image("content/mini_slaid_1.jpg", "works__mini-slaider-img")
-              li.works__mini-slaider-item
-                +image("content/mini_slaid_2.jpg", "works__mini-slaider-img")
-              li.works__mini-slaider-item
-                +image("content/mini_slaid_3.jpg", "works__mini-slaider-img")
-              li.works__mini-slaider-item
-                +image("content/mini_slaid_4.jpg", "works__mini-slaider-img")
+              -
+                var imgLists = ["content/mini_slaid_1.jpg",
+                                "content/mini_slaid_2.jpg",
+                                "content/mini_slaid_3.jpg",
+                                "content/mini_slaid_4.jpg"]
+              each img in imgLists
+                li.works__mini-slaider-item
+                  +image(img, "works__mini-slaider-img")
             .works__slaider-controls
               button.works__slaider-btn
                 +icon("arrow-down", "works__slaider-btn-prev works__btn-active")

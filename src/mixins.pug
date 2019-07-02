@@ -12,14 +12,3 @@ mixin listLinks (className, items)
     each item in items
       li(class = `${className}__item`)
         a(class = `${className}__link` href="#")= item
-
-
-mixin svgList(names, nums)
-  ul.skills__list
-    -for (var i=0; i<names.length; i++)
-      -for (var i=0; i<nums.length; i++)
-        li.skills__item
-          svg.skills__svg(viewBox='0 0 100 100', preserveAspectRatio='none')
-            circle.skills__circle.skills__circle-under(cy='50' cx='50' r='40')
-            circle.skills__circle.skills__circle-above(cy='50' cx='50' r='40', style=`stroke-dashoffset: ${nums[i]}`)
-          span.skills__name= `${names[i]}`

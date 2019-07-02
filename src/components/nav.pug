@@ -1,4 +1,8 @@
 
 mixin menu(mod)
   nav(class="nav nav__" + mod)
-    +listLinks("nav", ["главная", "обо мне", "навыки", "работы", "отзывы", "связаться"])
+    -var items = ["главная", "обо мне", "навыки", "работы", "отзывы", "связаться"]
+    ul(class = "nav__list")
+      each item in items
+        li(class = "nav__item")
+          a(class = "nav__link" href="#")= item
