@@ -4,8 +4,11 @@ mixin icon(name, className)
   svg(class=className viewBox=icon.viewBox preserveAspectRatio="none")
     use(xlink:href=icon.url)
 
-mixin image(path, className)
-  img(src=require(`images/${path}`) class=className)
+mixin image(path, className, description, rollName)
+  if role
+    img(src=require(`images/${path}`) class=className role=rollName)
+  else
+    img(src=require(`images/${path}`) class=className alt=description)
 
 mixin listLinks (className, items)
   ul(class = `${className}__list`)

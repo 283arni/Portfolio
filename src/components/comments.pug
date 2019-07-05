@@ -1,5 +1,5 @@
 section.comments
-  .container
+  .container.container__full-screen
     .comments__wrapper
       .comments__header
         h2.title Что обо мне говорят
@@ -20,8 +20,8 @@ section.comments
               },
               {
                 "src": "content/saban.jpg",
-                "name": "Ковальчук Дмитрий",
-                "position": "Основатель Loftschool",
+                "name": "Владимир Сабанцев",
+                "position": "Преподаватель",
                 "text": "Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах"
               }              
             ]
@@ -33,7 +33,7 @@ section.comments
                 p.comments__text= item.text 
                 .comments__dude
                   .comments__pic
-                    +image(item.src, "comments__img")
+                    +image(item.src, "comments__img", "Аватарка")
                   .comments__data
                     span= item.name
                     span= item.position

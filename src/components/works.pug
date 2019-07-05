@@ -1,10 +1,10 @@
 section.works
-  .container
+  .container.container__full-screen
     .works__wrapper
       h2.title Мои работы
       .works__content
         .works__slaider
-          +image("content/slaid_1.jpg", "works__img")
+          +image("content/slaid_1.jpg", "works__img", "Образец работы")
           .works__mini-slaider
             ul.works__mini-slaider-list
               -
@@ -14,7 +14,7 @@ section.works
                                 "content/mini_slaid_4.jpg"]
               each img in imgLists
                 li.works__mini-slaider-item
-                  +image(img, "works__mini-slaider-img")
+                  +image(img, "works__mini-slaider-img", "Образец работы в слайдере")
             .works__slaider-controls
               button.works__slaider-btn
                 +icon("arrow-down", "works__slaider-btn-prev works__btn-active")

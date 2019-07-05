@@ -1,16 +1,24 @@
 .header {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 2.4fr 1fr;
+  grid-template-rows: 1fr;
   align-items: center;
-  justify-content: space-between;
   padding: 50px 0 50px 0;
-  margin-bottom: 333px;
+  margin-bottom: 330px;
 
   @include desktop {
-    margin-bottom: 220px;
+    margin-bottom: 205px;
+    grid-template-columns: 1fr 5.5fr 1fr;
   }
 
   @include tablets {
-    margin-bottom: 90px;
+    margin-bottom: 85px;
+    grid-template-columns: 0.6fr 3fr 0.75fr;
+  }
+
+  @include phones {
+    grid-template-columns:1fr 1fr;
+    margin-bottom: 80px;
   }
 }
 

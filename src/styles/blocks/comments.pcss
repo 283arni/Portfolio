@@ -2,11 +2,15 @@
   margin-bottom: 185px;
 
   @include desktop {
-    margin-bottom: 210px;
+    margin-bottom: 180px;
   }
 
   @include tablets {
     margin-bottom: 120px;
+  }
+
+  @include phones {
+    margin-bottom: 170px;
   }
 }
 
@@ -16,22 +20,30 @@
   margin-bottom: 90px;
 
   @include desktop {
-    margin-bottom: 100px;
+    margin-bottom: 80px;
   }
   
   @include tablets {
     margin-bottom: 62px;
   }
 
+  @include phones {
+    flex-direction: column;
+    margin-bottom: 35px;
+  }
 
   & h2 {
     color: $whiter;
     margin-right: 95px;
 
-    @include desktop {
-      margin-right: 125px;
+    @include tablets {
+      margin-right: 130px;
     }
 
+    @include phones {
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
 
   }
 }
@@ -49,9 +61,6 @@
 
   &:first-child {
     margin-right: 30px;
-    @include desktop {
-      margin-right: 40px;
-    }
   }
 }
 
@@ -77,6 +86,10 @@
 .comments__list {
   display: flex;
   
+  @include phones {
+    min-width: 306px;
+    overflow: hidden;
+  }
 }
 
 .comments__item {
@@ -86,9 +99,13 @@
 
   @include desktop {
     padding: 0;
-    margin-right: 30px;
+    
   }
 
+  @include phones {
+    min-width: 100%;
+    margin-right: 0;
+  }
 }
 
 
@@ -103,6 +120,9 @@
     min-width: 30px;
     margin-right: 20px;
   }
+  @include phones {
+    margin-right: 5px;
+  }
 }
 .comments__text {
   font-weight: 600;
@@ -110,6 +130,10 @@
   color: rgba($whiter, 0.5);
   margin-bottom: 30px;
   line-height: 1.88;
+
+  @include phones {
+    margin-bottom: 20px;
+  }
 }
 
 .comments__dude {
@@ -126,6 +150,10 @@
     font-size: 18px;
     color: $whiter;
     margin-bottom: 15px;
+
+    @include phones {
+      margin-bottom: 8px;
+    }
   }
 
   & span:nth-child(2) {
@@ -136,6 +164,11 @@
 
 .comments__pic {
   margin-right: 30px;
+
+  @include phones {
+    width: 50px;
+    height: 50px;
+  }
 
 }
 

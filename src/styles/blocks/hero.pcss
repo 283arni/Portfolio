@@ -2,35 +2,38 @@
   margin-bottom: 335px;
 
   @include desktop {
-    margin-bottom: 260px;
+    margin-bottom: 235px;
     
   }
 }
 
 
 .hero__welcome {
-  display: flex;
- justify-content: space-between;
+  display: grid;
+  grid-template: 1fr / 32% 68%;
+  grid-gap: 65px;
+
+  @include desktop {
+    grid-template-columns: 37% 64%;   
+    grid-gap: 55px;
+  }
 
  @include tablets {
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
+   grid-template: 1fr / 1fr;
+   grid-gap: 22px;
+ }
+
+ @include phones {
+   grid-gap: 0;
  }
 }
 
 
 .hero__caption {
   text-align: right;
-  width: 31.5%;
-
-  @include desktop {
-    width: 36%;
-  }
 
   @include tablets {
     text-align: center;
-    margin-bottom: 20px;
   }
   
   & h4 {
@@ -45,17 +48,16 @@
   font-weight: 800;
   color: $whiter;
   line-height: 0.83;
-  width: 64%;
 
-  @include desktop {
-    width: 58%;
-
-  }
 
   @include tablets {
     text-align: center;
     font-size: 48px;
-    width: 100%;
     line-height: 1.2;
+  }
+
+  @include phones {
+    font-size: 36px;
+    line-height: 1.5;
   }
 }

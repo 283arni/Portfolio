@@ -2,9 +2,6 @@
 .form {
   width: 865px;
 
-  @include desktop {
-    width: 925px;
-  }
 
   @include tablets {
     width: 100%;
@@ -18,17 +15,33 @@
   @include desktop {
     margin-bottom: 50px;
   }
+
+  @include phones {
+    flex-direction:column;
+    margin-bottom: 60px;
+  }
+  
+}
+
+.form__data .form__block:nth-child(1) {
+  @include phones{
+    margin-bottom: 50px;
+  }
 }
 
 .form__message {
   margin-bottom: 60px;
 
   @include desktop {
-    margin-bottom: 70px;
+    margin-bottom: 55px;
   }
 
   @include tablets {
     margin-bottom: 30px;
+  }
+
+  @include phones {
+    margin-bottom: 55px;
   }
 
 }
@@ -51,6 +64,10 @@
 
   &:nth-child(1) {
     margin-right: 50px;
+
+    @include phones {
+      margin-right: 0;
+    }
   }
 }
 
@@ -118,12 +135,13 @@
   background: linear-gradient(to right, rgb($filling), rgb($filling-dark));
   border:none;
 
-  @include desktop {
-    padding: 30px 130px;
-  }
 
   @include tablets {
     padding: 35px 140px;
+  }
+
+  @include phones {
+    padding: 24px 90px; 
   }
 }
 

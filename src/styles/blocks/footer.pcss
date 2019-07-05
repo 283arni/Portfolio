@@ -5,33 +5,37 @@
 
 .footer__wrapper {
   padding: 78px 0;
-  display: flex;
-}
-
-.footer__creator-site {
-  display: flex;
-  width: 34%;
+  display: grid;
+  grid-template: 1fr/ 0.8fr 1fr 3.5fr;
 
   @include desktop {
-    flex-direction: column;
-    width: 26%;
+    grid-template: 0.7fr 2fr/ 1.55fr 1fr 3.5fr;
+    padding: 60px 0;
   }
 
   @include tablets {
-    width: 35%;
+    grid-template: 0.45fr 2fr/ 2.1fr 1fr 3fr;
+  }
+
+  @include phones {
+    padding: 70px 0;
   }
 }
 
 .footer__year {
-  width: 44%;
-  line-height: 1;
 
   @include desktop {
-    margin-bottom: 25px;
-    width: 100%;
+    grid-area: 1/1/2/2;
+
+  }
+
+  @include phones {
+    grid-area: 1/1/2/4;
+    margin-bottom: 10px;
   }
 
   & span {
+    line-height: 1;
     display: block;
     font-size: 48px;
     font-weight: 600;
@@ -41,14 +45,16 @@
 }
 
 .footer__name {
-  width: 40%;
-
-  @include desktop {
-    width: 100%;
-  }
   display: flex;
   flex-direction: column;
-  margin-bottom: 15px;
+
+  @include desktop {
+    grid-area: 2/1/3/2;
+  }
+
+  @include phones {
+    grid-area: 2/1/3/4
+  }
 
   & span {
       &:first-child {
@@ -56,29 +62,29 @@
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 10px;
-
     
-    @include desktop {
-      margin-bottom: 20px;
+
+    @include phones {
+      margin-bottom: 0;
     }
   }
 
-  &:last-child {
-    opacity: 0.15;
-  }
+    &:last-child {
+      opacity: 0.15;
+    }
   }
 }
 
 .footer__main {
-  width: 66%;
 
   @include desktop {
-    width: 74%;
+    grid-area: 1/ 2/ 3 /4
   }
 
-  @include tablets {
-    width: 66%;
+  @include phones {
+    grid-area: 3/1/4/4
   }
+
 }
 
 
@@ -89,7 +95,7 @@
   justify-content: flex-start;
 
   @include desktop {
-    padding-top: 58px;
+    padding-top: 54px;
   }
 
   @include tablets {
@@ -97,21 +103,25 @@
     padding-top: 52px;
   }
 
-}
-
-.footer__sites,
-.footer__article {
-  width: 42%;
-
-  @include tablets {
-    width: 100%;
+  @include phones {
+    padding-top: 43px;
   }
+
 }
 
 .footer__sites {
+  margin-right: 180px;
+
+    @include desktop {
+    margin-right: 40px;
+  }
 
   @include tablets {
     margin-bottom: 65px;
+  }
+
+  @include phones {
+    margin-bottom: 50px;
   }
 }
 
@@ -129,9 +139,7 @@
 }
 
 .footer__sites {
-  @include desktop {
-    margin-right: 30px;
-  }
+
 }
 
 .footer__socials {

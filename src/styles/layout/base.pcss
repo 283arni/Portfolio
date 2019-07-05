@@ -1,4 +1,6 @@
 html {
+  font-size:16px;
+
   @include desktop {
     font-size: 15px;
   }
@@ -13,7 +15,6 @@ html {
 
 body {
   font-family: 'Open Sans', Helvetica, sans-serif;
-  font-size: 16px;
   line-height: 1.42;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -36,11 +37,15 @@ body {
   padding: 140px 0 165px 0;
 
   @include desktop {
-    padding: 145px 0 180px 0;
+    padding: 140px 0 180px 0;
   }
 
   @include tablets {
-    padding-bottom: 113px;
+    padding-bottom: 130px;
+  }
+
+  @include phones {
+    padding: 105px 0 125px 0;
   }
 }
 
@@ -48,19 +53,25 @@ body {
   margin: 0 auto;
   max-width: 1480px;
   width: 95%;
-  // width: 1490px;
 
   @include desktop {
-  max-width: 1150px;
+  max-width: 1080px;
   }
 
   @include tablets {
-    max-width: 785px;
+    max-width: 780px;
   } 
 
   @include phones {
-    width: 85%;
+    max-width: 300px;
   }
+}
+
+.container__full-screen {
+  @include phones {
+    max-width: 380px;
+  }
+  
 }
 
 .fullscreen-section {
@@ -125,5 +136,9 @@ blockquote {
 
   @include tablets {
     font-size: 30px;
+  }
+
+  @include phones {
+    font-size: 24px;
   }
 }

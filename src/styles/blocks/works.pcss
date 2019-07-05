@@ -1,24 +1,35 @@
 .works {
-  padding: 140px 0 200px 0;
+  padding: 115px 0 210px 0;
   @include desktop {
-    padding-bottom: 165px;
+    padding: 100px 0 145px 0;
   }
 
   @include tablets {
     padding: 140px 0 135px 0;
   }
+
+    @include phones {
+    padding: 110px 0 118px 0;
+  }
 }
+
 .works__wrapper h2{
   margin-bottom: 90px;
   color: $slaid-btn-color;
 
   @include desktop {
-    margin-bottom: 75px;
+    margin-bottom: 60px;
   }
 
   @include tablets {
     margin-bottom: 60px;
   }
+
+  @include phones {
+    margin-bottom: 35px;
+    text-align: center;
+  }
+
 }
 
 .works__content {
@@ -28,6 +39,8 @@
     flex-direction:column;
     align-items: center;
   }
+
+
 }
 
 .works__slaider {
@@ -47,7 +60,11 @@
   width: 85%;
 
   @include tablets {
-    width: 90%;
+    width: 92%;
+  }
+
+  @include phones {
+    width: 100%;
   }
 }
 
@@ -63,17 +80,27 @@
     }
 
     @include tablets {
-      right: 24px;
+      right: 4px;
+    }
+
+    @include phones {
+      right: 0;
+      bottom: 0;
     }
 }
 
 .works__mini-slaider-list {
   display: flex;
   
+  
+  @include phones {
+    display: none;
+  }
 }
 
 .works__mini-slaider-img {
   height: 100%;
+
 }
 
 .works__mini-slaider-list li:nth-child(4) {
@@ -87,6 +114,10 @@
 .works__mini-slaider-item:first-child {
   outline: 3px solid $outline;
   z-index: 20;
+
+  @include phones {
+    outline: none;
+  }
 
 }
 
@@ -154,19 +185,29 @@
     font-size: 300px;
     top: 0;
   }
+
+  @include phones {
+    display: none;
+  }
 }
 
 .works__info {
   width: 23%;
 
   @include desktop {
-    width: 27%;
+    width: 30%;
   }
 
   @include tablets {
     width: 60%;
     padding-top: 80px;
     text-align: center;
+  }
+
+  @include phones {
+    width: 80%;
+    padding-top: 70px;
+    text-align: left;
   }
 
   & h3 {
@@ -177,11 +218,16 @@
     margin-bottom: 30px;
 
     @include desktop {
-      margin-bottom: 40px;
+      margin-bottom: 28px;
     }
 
     @include tablets {
       margin-bottom: 23px;
+    }
+
+    @include phones {
+      line-height: normal;
+      margin-bottom: 8px;
     }
   }
   & p {
@@ -192,6 +238,10 @@
 
     @include tablets {
       margin-bottom: 15px;
+    }
+
+    @include phones {
+      margin-bottom: 45px;
     }
   }
 }
@@ -211,6 +261,10 @@
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
+  }
+
+  @include phones {
+    margin-bottom: 20px;
   }
 }
 

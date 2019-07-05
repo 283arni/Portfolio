@@ -1,46 +1,62 @@
 .skills {
-  background: 0% 120% no-repeat url("../images/content/arms.png") , top/100% no-repeat url("../images/content/bg_skills.png");
+  background: 0% 120% no-repeat url("../images/content/arms.png") , top/100% 95% no-repeat url("../images/content/bg_skills.png");
   font-weight: bold;
 
   @include desktop {
-    background: 0% 100%/30% no-repeat url("../images/content/arms.png") , center/cover no-repeat url("../images/content/bg_skills.png");
+    background: 0% 100%/30% no-repeat url("../images/content/arms.png") , top/100% 93% no-repeat url("../images/content/bg_skills.png");
   }
 
   @include tablets {
     background: center 101%/50% no-repeat url("../images/content/arms_bottom.png") , center/cover no-repeat url("../images/content/bg_skills.png");
   }
+
+  @include phones {
+    background: center 101%/100% no-repeat url("../images/content/arms_bottom.png") , center/cover no-repeat url("../images/content/bg_skills.png");
+  }
 }
 
 .skills__container {
-  padding: 220px 0 180px 500px;
+  padding: 220px 0 180px 0;
+  display: grid;
+  grid-template: 1fr 2fr/1fr 1.8fr;
+  justify-items: center;
 
     @include desktop {
-      padding: 180px 0 160px 300px;
+      padding: 150px 0 130px 0;
+      grid-template: 0.95fr 2fr/1fr 61%;
     }
 
     @include tablets {
-      padding: 110px 0 370px 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      padding: 110px 0 330px 0;
+      grid-template-rows: 0.95fr 2fr;
+    }
+    @include phones {
+      grid-template-rows: 1fr 2.6fr;
+      padding: 100px 0 230px 0;
     }
 }
 
 .skills__header {
-  width: 50%;
-  margin-bottom: 84px;
+  grid-column: 1/3;
+  width: 40%;
+  text-align: left;
+  padding-left: 60px;
 
   @include desktop {
     width: 60%;
-    margin-bottom: 95px;
   }
 
   @include tablets {
-    text-align: center;
     width: 70%;
-    margin-bottom: 50px;
-
+    text-align: center;
+    padding-left: 0;
   }
+
+  @include phones {
+    width: 100%;
+    text-align: left;
+  }
+
   & h2 {
     color: $whiter;
     font-size: 30px;
@@ -48,14 +64,18 @@
     margin-bottom: 46px;
 
     @include desktop {
-      margin-bottom: 53px;
+      margin-bottom: 48px;
     }
 
     @include tablets {
       
-      width: 50%;
+      width: 60%;
       margin: auto;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
+    }
+
+    @include phones {
+      width: 100%;
     }
   }
   & p {
@@ -66,14 +86,13 @@
 }
 
 .skills__power {
-  padding-left: 130px;
+  grid-column: 2/3;
 
-  @include desktop {
-    padding-left: 90px;
-  }
 
   @include tablets {
     padding-left: 0;
+    grid-column: 1/3;
+    
   }
 }
 
@@ -81,11 +100,15 @@
   margin-bottom: 30px;
 
   @include desktop {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
   }
 
   @include tablets {
-    margin-bottom: 40px;
+    margin-bottom: 37px;
+  }
+
+  @include phones {
+    margin-bottom: 55px;
   }
 }
 
@@ -106,6 +129,10 @@
 
 .skills__list {
   display: flex;
+
+  @include phones {
+    flex-wrap: wrap;
+  }
 }
 
 .skills__item {
@@ -115,12 +142,25 @@
   @include tablets {
     margin-right: 10px;
   }
+
+  @include phones {
+    margin-right: 0;
+  }
+}
+
+.skills__item:nth-child(4) {
+  margin-right: 0;
 }
 
 
 .skills__svg {
   width: 160px;
   height: 160px;
+
+  @include phones {
+    width: 150px;
+    height: 150px;
+  }
 }
 
 .skills__circle {
