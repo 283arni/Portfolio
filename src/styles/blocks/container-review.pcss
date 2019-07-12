@@ -1,0 +1,33 @@
+.bg-rail {
+  position: relative;
+  background: url("../images/content/bg_comments.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 140px 0 165px 0;
+
+  @include desktop {
+    padding: 140px 0 180px 0;
+  }
+
+  @include tablets {
+    padding-bottom: 130px;
+  }
+
+  @include phones {
+    padding: 105px 0 125px 0;
+  }
+}
+
+.bg-rail::before {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 600px;
+  height: 1500px;
+  content: "";
+  display: block;
+  background: url("../images/content/leaf_1.png"), url("../images/content/leaf_2.png"), url("../images/content/leaf_3.png"), url("../images/content/leaf_4.png");
+  background-repeat: no-repeat;
+  background-position: 0% 50%, 100% 75%, left bottom, top right;
+}

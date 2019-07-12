@@ -10,20 +10,19 @@ html(lang="ru")
     title Portfolio | main page
   body
     .wrapper
+      include components/parallax
       .maincontent
-        .bg
-          .container
-            include components/header
-            include components/hero
-            include components/scroll
-          include components/about
+        .container
+          include components/header
+          include components/hero
+          include components/scroll
+        include components/about
         include components/skills
         include components/works
-        .bg-rail
-          include components/comments
-          include components/conect
+        include components/container-review
         include components/footer
-
+    include components/skills-widget
+    include components/works-slider
 
 
 

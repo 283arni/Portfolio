@@ -1,5 +1,4 @@
-.socials__header {
-
+.socials_header {
   @include desktop {
     margin-left: 0;
   }
@@ -14,7 +13,7 @@
   justify-content: flex-end;
 }
 
-.socials__footer .socials__list {
+.socials_footer .socials__list {
   justify-content: flex-start;
 }
 
@@ -22,17 +21,18 @@
   width: 25px;
   height: 25px;
   fill: $socials;
+  transition: 0.4s;
 }
 
 .socials__svg:hover {
   fill: $socials-hover;
 }
 
-.socials__header .socials__item {
-    margin-left: 48px;
+.socials_header .socials__item {
+  margin-left: 48px;
 }
 
-.socials__footer .socials__item {
+.socials_footer .socials__link {
   position: relative;
   display: block;
   width: 50px;
@@ -40,18 +40,24 @@
   border: 1px solid rgba($whiter, 0.3);
   border-radius: 50%;
   margin-right: 22px;
-
-  &:hover {
-     border: 1px solid $socials-hover;
-  }
+  transition: 0.4s;
 }
 
-.socials__footer .socials__link {
+.socials_footer .socials__link:hover {
+  border: 1px solid $socials-hover;
+}
+
+
+.socials_footer .socials__svg {
   width: 25px;
   height: 25px;
   fill: rgba($whiter, 0.3);
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%);
+}
+
+.socials_footer .socials__link:hover .socials__svg {
+  fill: $socials-hover;
 }

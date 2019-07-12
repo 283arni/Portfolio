@@ -1,22 +1,22 @@
 form.form(action="" name="form")
   .form__data
-    .form__block
+    label.form__label.form__label_alignment(for="name")
       .form__svg
         +icon("user", "form__icon")
-      label.form__label(for="name")
+      .form__block
         .form__name Введите ваше имя
         input.form__enter-text#name(type="text" placeholder="Ковальчук Дмитрий")
-    .form__block
+    label.form__label(for="email")
       .form__svg
         +icon("envelope", "form__icon")
-      label.form__label(for="email")
+      .form__block
         .form__name Введите ваш email
         input.form__enter-text#email(type="mail" placeholder="loftschool@study.com")
   .form__message
-    .form__block
+    label.form__label(for="message")
       .form__svg.form__svg_up
         +icon("message", "form__icon")
-      label.form__label(for="message")
+      .form__block
         .form__name Сообщение к письму
         textarea.form__enter-text#message(type="textarea" rows="2"  placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса")
   .form__btn

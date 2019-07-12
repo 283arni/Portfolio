@@ -1,13 +1,10 @@
-
-
-
 mixin iconList(mod)
-  div(class="socials socials__" + mod)
+  div(class="socials socials_" + mod)
     ul(class = "socials__list")
-      -var items = [{name: "insta", href: "#"},{name: "vk", href: "#"},{name:"github", href: "#"}]
+      -var items = [{name: "insta", href: "//www.instagram.com"},{name: "vk", href: "//vk.com"},{name:"github", href: "//github.com"}]
       each item in items
         li(class = "socials__item")
             a.socials__link( href=`${item.href}`)
-              +icon(`${item.name}`, "socials__svg"+' ' + `socials__${item.name}`)
+              +icon(`${item.name}`, "socials__svg"+' ' + `socials__svg_${item.name}`)
 
 

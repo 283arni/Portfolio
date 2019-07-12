@@ -3,10 +3,8 @@
 
   @include desktop {
     margin-bottom: 235px;
-    
   }
 }
-
 
 .hero__welcome {
   display: grid;
@@ -14,41 +12,35 @@
   grid-gap: 65px;
 
   @include desktop {
-    grid-template-columns: 37% 64%;   
+    grid-template-columns: 37% 64%;
     grid-gap: 55px;
   }
 
- @include tablets {
-   grid-template: 1fr / 1fr;
-   grid-gap: 22px;
- }
+  @include tablets {
+    grid-template: 1fr / 1fr;
+    grid-gap: 22px;
+  }
 
- @include phones {
-   grid-gap: 0;
- }
+  @include phones {
+    grid-gap: 0;
+  }
 }
-
 
 .hero__caption {
   text-align: right;
+  font-size: 18px;
+  opacity: 0.4;
+  line-height: 1.67;
 
   @include tablets {
     text-align: center;
-  }
-  
-  & h4 {
-    font-size: 18px;
-    opacity: 0.4;
-    line-height: 1.67;
   }
 }
 
 .hero__name {
   font-size: 72px;
   font-weight: 800;
-  color: $whiter;
   line-height: 0.83;
-
 
   @include tablets {
     text-align: center;

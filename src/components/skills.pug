@@ -1,39 +1,9 @@
 
-section.skills
+section.skills#skills-anchor
   .container 
     .skills__container
       .skills__header
-        h2 Чем я могу быть полезен вам
-        p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-      .skills__power
-        - 
-          var skills = [ 
-              {
-                "skillsTitle": "front-end",
-                "skills": {
-                  "HTML5": 40,
-                  "CSS3": 80,
-                  "Javascript": 30,
-                  "Jquery и Vue.js": 140
-                }
-              },
-              {
-                "skillsTitle": "workflow",
-                "skills": {
-                  "GIT": 110,
-                  "Terminal": 80,
-                  "Gulp": 30,
-                  "Webpack": 150
-                }
-              }
-            ];
-        each item in skills
-          .skills__front
-            h3= item.skillsTitle
-            ul.skills__list
-              each val, key in item.skills
-                li.skills__item
-                  svg.skills__svg(viewBox='0 0 100 100', preserveAspectRatio='none')
-                    circle.skills__circle.skills__circle-under(cy='50' cx='50' r='40')
-                    circle.skills__circle.skills__circle-above(cy='50' cx='50' r='40', style=`stroke-dashoffset: ${val}`)
-                  span.skills__name= key
+        h2.skills__title.title Чем я могу быть полезен вам
+        p.paragraph Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+      #skills__container
+

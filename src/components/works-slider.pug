@@ -1,0 +1,62 @@
+script(src="text/x-template")#slider-content
+  .works__content
+    slider(
+      :works="works"
+      :currentWork="currentWork"
+      @slide="handleSlide"
+    )
+    info(
+      :currentWork="currentWork"
+    )
+
+script(src="text/x-template")#slider-screen
+  .works__slider
+    img.works__img(:src="currentWork.pic", alt="Образец работы")
+    items(
+      :works="works"
+      @slide="handleSlide"
+      :currentWork="currentWork"
+    )
+    number(
+      :currentWork="currentWork"
+    )
+
+script(src="text/x-template")#slider-items
+  .works__samples
+    ul.works__samples-list
+      li.works__samples-item(
+        v-for= "work in works"
+        :class="{active: work.id === currentWork.id}"
+        )
+        img.works__samples-img(:src="work.pic", alt="Образец работы")
+    btns(
+      @slide="way => $emit('slide', way)"
+      :currentWork="currentWork"
+    )
+
+script(src="text/x-template")#slider-number
+  .works__slider-index {{currentWork.id}}       
+
+script(src="text/x-template")#slider-controls
+  .works__slider-controls
+    button.works__slider-btn(@click ="$emit('slide', 'next')"  :disabled="currentWork.id === 4")
+      +icon("arrow-down", "works__slider-icon works__slider-icon_next")
+    button.works__slider-btn(@click ="$emit('slide', 'prev')"  :disabled="currentWork.id === 1")
+      +icon("arrow-down", "works__slider-icon works__slider-icon_prev")
+
+script(src="text/x-template")#slider-info
+  .works__info
+    tags(
+      :tags="tagsInArray"
+    )
+    .works__info-title {{currentWork.title}}
+    p.works__info-text {{currentWork.text}}
+    a.works__link(:href="currentWork.link")
+      +icon("link", "works__svg")
+      span.works__link-text Посмотреть сайт
+
+script(src="text/x-template")#slider-tags
+  ul.works__list
+    li.works__item(v-for="tag in tags")
+      .works__tag {{tag}}
+

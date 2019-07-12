@@ -1,0 +1,269 @@
+.works__content {
+  display: flex;
+
+  @include tablets {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.works__slider {
+  position: relative;
+  width: 77%;
+
+  @include desktop {
+    width: 68%;
+  }
+
+  @include tablets {
+    width: 100%;
+  }
+}
+
+.works__img {
+  width: 85%;
+
+  @include tablets {
+    width: 92%;
+  }
+
+  @include phones {
+    width: 100%;
+  }
+}
+
+.works__samples {
+  position: absolute;
+  display: flex;
+  bottom: 12%;
+  right: 10.6%;
+
+  @include desktop {
+    bottom: 12%;
+    right: 8.2%;
+  }
+
+  @include tablets {
+    right: 4px;
+  }
+
+  @include phones {
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.works__samples-list {
+  display: flex;
+  
+  
+  @include phones {
+    display: none;
+  }
+}
+
+
+.works__samples-item {
+  height: 100px;
+  &:last-child {
+    @include desktop {
+      display: none;
+    }
+  }
+
+  @include desktop {
+    height: 108px;
+  }
+
+  @include tablets {
+    height: 116px;
+  }
+}
+
+.works__samples-item.active {
+  outline: 3px solid $outline;
+  z-index: 20;
+
+  @include phones {
+    outline: none;
+  }
+}
+
+.works__slider-btn {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  background-color: $works-color;
+  display: block;
+  padding: 0;
+  outline: none;
+  transition: 0.3s;
+
+  &:hover:disabled {
+    background-color: $works-color;
+  }
+
+  &:disabled .works__slider-icon {
+    fill: $wrapper;
+  }
+  
+  @include desktop {
+    width: 54px;
+    height: 54px;
+  }
+
+  @include tablets {
+    width: 58px;
+    height: 58px;
+  }
+}
+
+.works__slider-btn:hover {
+  background-color: $btn-hover;
+}
+
+
+.works__slider-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 10px;
+  fill: rgba($whiter, 1);
+}
+
+.works__slider-icon_prev {
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+
+
+
+.works__slider-index {
+  position: absolute;
+  font-size: 400px;
+  color: $slaid-inx-color;
+  font-weight: 800;
+  top: 30px;
+  right: 0;
+  z-index: -20;
+  line-height: 0.8;
+
+  @include desktop {
+    font-size: 300px;
+    top: 0;
+  }
+
+  @include phones {
+    display: none;
+  }
+}
+
+.works__info {
+  width: 23%;
+  color: rgba($text-color, 0.7);
+
+  @include desktop {
+    width: 30%;
+  }
+
+  @include tablets {
+    width: 60%;
+    padding-top: 80px;
+    text-align: center;
+  }
+
+  @include phones {
+    width: 80%;
+    padding-top: 70px;
+    text-align: left;
+  }
+}
+
+.works__info-title {
+  font-size: 30px;
+  font-weight: bold;
+  color: $works-color;
+  line-height: 1.6;
+  margin-bottom: 30px;
+
+  @include desktop {
+    margin-bottom: 28px;
+  }
+
+  @include tablets {
+    margin-bottom: 23px;
+  }
+
+  @include phones {
+    line-height: normal;
+    margin-bottom: 8px;
+  }
+}
+
+.works__info-text {
+  font-weight: 600;
+  line-height: 1.88;
+  margin-bottom: 38px;
+
+  @include tablets {
+    margin-bottom: 15px;
+  }
+
+  @include phones {
+    margin-bottom: 45px;
+  }
+}
+
+.works__list {
+  display: flex;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 43px;
+
+
+  @include desktop {
+    margin-bottom: 48px;
+  }
+
+  @include tablets {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+
+  @include phones {
+    margin-bottom: 20px;
+  }
+}
+
+.works__item {
+  border: 1px solid transparent;
+  border-radius: 18px;
+  background: rgba( $item-color, 0.1);
+  padding: 8px 15px;
+  margin-right: 20px;
+}
+
+
+.works__svg {
+  width: 15px;
+  height: 15px;
+  fill: $link-color;
+  margin-right: 15px;
+}
+
+.works__link {
+  border-bottom: 1px solid transparent;
+  transition: 0.4s;
+
+  &:hover {
+    border-bottom: 1px solid $link-color;
+  }
+
+  & .works__link-text {
+    color: $link-color;
+    font-weight: bold;
+    font-size: 18px;
+  }
+}

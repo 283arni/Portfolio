@@ -6,6 +6,7 @@
   "bp-desktop": "1200px",
   "bp-tablets": "768px",
   "bp-phones": "480px",
+  "bp-skill": "617px",
   "wrapper": "#1b1f22",
   "filling-dark": "#ea7400",
   "filling": "#f29400",

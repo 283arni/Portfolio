@@ -7,10 +7,10 @@
   }
 }
 
-
-.mini-menu__link {
+.mini-menu__click {
   cursor: pointer;
 }
+
 
 .mini-menu__block {
   position: relative;
@@ -20,22 +20,22 @@
   background-color: $whiter;
 }
 
-.mini-menu__block:after {
+.mini-menu__block::after {
   position: absolute;
   width: 24px;
   height: 4px;
   display: block;
   background-color: $whiter;
-  content: '';
+  content: "";
   bottom: 8px;
 }
 
-.mini-menu__block:before {
+.mini-menu__block::before {
   position: absolute;
   width: 24px;
   height: 3px;
   display: block;
   background-color: $whiter;
-  content:'';
+  content: "";
   top: 8px;
 }

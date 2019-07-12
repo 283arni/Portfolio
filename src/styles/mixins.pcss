@@ -16,6 +16,12 @@
   }
 }
 
+@mixin forSkill() {
+  @media screen and (max-width: $bp-skill) {
+    @content;
+  }
+}
+
 @mixin phones() {
   @media screen and (max-width: $bp-phones) {
     @content;

@@ -1,8 +1,17 @@
 
 mixin menu(mod)
-  nav(class="nav nav__" + mod)
-    -var items = ["главная", "обо мне", "навыки", "работы", "отзывы", "связаться"]
+  nav(class="nav nav_" + mod)
+    -
+      var items = {
+        "Главная": "#main",
+        "Обо мне": "#about",
+        "Навыки": "#skills-anchor",
+        "Работы": "#works",
+        "Отзывы": "#review",
+        "Связаться": "#connect"
+      }
     ul(class = "nav__list")
-      each item in items
+      each val, key in items
         li(class = "nav__item")
-          a(class = "nav__link" href="#")= item
+          a(class = "nav__link" href=`${val}`)= key
+

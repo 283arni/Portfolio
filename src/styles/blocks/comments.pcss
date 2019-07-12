@@ -31,20 +31,18 @@
     flex-direction: column;
     margin-bottom: 35px;
   }
+}
 
-  & h2 {
-    color: $whiter;
-    margin-right: 95px;
+.comments__title {
+  margin-right: 95px;
 
-    @include tablets {
-      margin-right: 130px;
-    }
+  @include tablets {
+    margin-right: 130px;
+  }
 
-    @include phones {
-      margin-right: 0;
-      margin-bottom: 30px;
-    }
-
+  @include phones {
+    margin-right: 0;
+    margin-bottom: 30px;
   }
 }
 
@@ -58,18 +56,19 @@
   border: solid 1px $whiter;
   border-radius: 50%;
   position: relative;
+  transition: 0.3s;
+  margin-right: 30px;
 
-  &:first-child {
-    margin-right: 30px;
+  &:hover {
+    opacity: 0.5;
+  }
+
+  &:last-child {
+    margin-right: 0;
   }
 }
 
-.comments__arrow:hover {
-  opacity: 0.5;
-}
-
-.comments__prev-click,
-.comments__next-click {
+.comments__click {
   position: absolute;
   width: 10px;
   height: 10px;
@@ -79,7 +78,7 @@
   fill: $whiter;
 }
 
-.comments__prev-click {
+.comments__click-prev {
   transform: translate(-50%, -50%) rotate(180deg);
 }
 
@@ -99,7 +98,6 @@
 
   @include desktop {
     padding: 0;
-    
   }
 
   @include phones {
@@ -120,16 +118,18 @@
     min-width: 30px;
     margin-right: 20px;
   }
+
   @include phones {
     margin-right: 5px;
   }
 }
-.comments__text {
-  font-weight: 600;
-  min-height: 120px;
-  color: rgba($whiter, 0.5);
-  margin-bottom: 30px;
+
+.comments__info p {
   line-height: 1.88;
+  opacity: 0.5;
+  min-height: 120px;
+  margin-bottom: 30px;
+  font-weight: 600;
 
   @include phones {
     margin-bottom: 20px;
@@ -144,11 +144,12 @@
 .comments__data {
   display: flex;
   flex-direction: column;
+}
 
-  & span:nth-child(1) {
+.comments__data span {
+  &:first-child {
     font-weight: bold;
     font-size: 18px;
-    color: $whiter;
     margin-bottom: 15px;
 
     @include phones {
@@ -156,22 +157,20 @@
     }
   }
 
-  & span:nth-child(2) {
+  &:last-child {
     font-weight: 600;
-    color: rgba($whiter, 0.3)
+    opacity: 0.3;
   }
 }
 
 .comments__pic {
   margin-right: 30px;
-
-  @include phones {
-    width: 50px;
-    height: 50px;
-  }
-
 }
 
 .comments__img {
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
 }

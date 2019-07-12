@@ -1,20 +1,22 @@
 html {
-  font-size:16px;
+  font-size: 16px;
 
   @include desktop {
     font-size: 15px;
   }
+
   @include tablets {
     font-size: 14px;
   }
 }
+
 body,
 html {
   height: 100%;
 }
 
 body {
-  font-family: 'Open Sans', Helvetica, sans-serif;
+  font-family: "Open Sans", Helvetica, sans-serif;
   line-height: 1.42;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -25,28 +27,6 @@ body {
   overflow: hidden;
   min-height: 100%;
   position: relative;
-  
-}
-
-.bg {
-  background:  top/cover no-repeat url("../images/content/bg_main.png");
-}
-
-.bg-rail {
-  background: center/cover no-repeat url("../images/content/bg_comments.png");
-  padding: 140px 0 165px 0;
-
-  @include desktop {
-    padding: 140px 0 180px 0;
-  }
-
-  @include tablets {
-    padding-bottom: 130px;
-  }
-
-  @include phones {
-    padding: 105px 0 125px 0;
-  }
 }
 
 .container {
@@ -55,23 +35,22 @@ body {
   width: 95%;
 
   @include desktop {
-  max-width: 1080px;
+    max-width: 1080px;
   }
 
   @include tablets {
     max-width: 780px;
-  } 
+  }
 
   @include phones {
     max-width: 300px;
   }
 }
 
-.container__full-screen {
+.container_full-screen {
   @include phones {
     max-width: 380px;
   }
-  
 }
 
 .fullscreen-section {
@@ -131,14 +110,16 @@ blockquote {
 }
 
 .title {
-  font-size: 36px;
+  font-size: 30px;
   font-weight: bold;
-
-  @include tablets {
-    font-size: 30px;
-  }
 
   @include phones {
     font-size: 24px;
   }
+}
+
+.paragraph {
+  line-height: 1.88;
+  opacity: 0.5;
+  font-weight: 600;
 }

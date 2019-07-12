@@ -1,0 +1,26 @@
+script(type="text/x-template")#skills__content     
+  .skills__power(ref="skills")
+    row(
+      v-for="item in items"
+      :item="item"
+    )
+
+script(type="text/x-template")#skills__row
+  .skills__technology
+    .skills__technology-name {{item.skillsTitle}}
+    ul.skills__list
+      li.skills__item(v-for="(skillPercent, slillKey) in item.skills")
+        skillsList(
+          :skillPercent="skillPercent"
+          :slillKey="slillKey"      
+        )
+
+script(type="text/x-template")#skill  
+  .skills__wrapper
+    svg.skills__svg(viewBox='0 0 100 100', preserveAspectRatio='none')
+      circle.skills__circle.skills__circle-under(cy='50' cx='50' r='40')
+      circle.skills__circle.skills__circle-above(cy='50' cx='50' r='40' ref="circle" stroke="url(#gradient)" transform="rotate(180 50 50)" )
+      linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0%")
+        stop(offset="0%" stop-color="#ea7400")
+        stop(offset="100%" stop-color="#f29400")
+    .skills__name {{slillKey}}

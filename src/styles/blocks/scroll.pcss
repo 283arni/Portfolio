@@ -1,7 +1,6 @@
 .scroll {
-
   @include tablets {
-  display: none;
+    display: none;
   }
 }
 
@@ -13,12 +12,11 @@
 .scroll__link {
   display: inline-flex;
   color: $whiter;
-  
+  transition: 0.4s;
 }
 
 .scroll__link:hover {
   color: $item-color;
-  
 }
 
 .scroll__text {
@@ -30,6 +28,7 @@
   width: 35px;
   height: 30px;
   fill: $whiter;
+  transition: 0.4s;
 }
 
 .scroll__link:hover .scroll__svg {

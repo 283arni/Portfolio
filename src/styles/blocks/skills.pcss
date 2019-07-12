@@ -1,17 +1,46 @@
 .skills {
-  background: 0% 120% no-repeat url("../images/content/arms.png") , top/100% 95% no-repeat url("../images/content/bg_skills.png");
-  font-weight: bold;
+  position: relative;
+  background: url("../images/content/bg_skills.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+}
 
+.skills::before {
+  position: absolute;
+  top: 350px;
+  left: 0;
+  width: 600px;
+  height: 870px;
+  display: block;
+  content: "";
+  background: url("../images/content/arms.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+
+  
   @include desktop {
-    background: 0% 100%/30% no-repeat url("../images/content/arms.png") , top/100% 93% no-repeat url("../images/content/bg_skills.png");
+    width: 500px;
+    height: 730px;
+    top: 400px;
   }
 
   @include tablets {
-    background: center 101%/50% no-repeat url("../images/content/arms_bottom.png") , center/cover no-repeat url("../images/content/bg_skills.png");
+    width: 300px;
+    height: 500px;
+    left: 35%;
+    top: 797px;
+    transform: rotate(-90deg);
+  }
+
+  @include forSkill {
+    top: 1283px;
   }
 
   @include phones {
-    background: center 101%/100% no-repeat url("../images/content/arms_bottom.png") , center/cover no-repeat url("../images/content/bg_skills.png");
+    left: 28%;
+    top: 1090px;
   }
 }
 
@@ -21,19 +50,20 @@
   grid-template: 1fr 2fr/1fr 1.8fr;
   justify-items: center;
 
-    @include desktop {
-      padding: 150px 0 130px 0;
-      grid-template: 0.95fr 2fr/1fr 61%;
-    }
+  @include desktop {
+    padding: 150px 0 130px 0;
+    grid-template: 0.95fr 2fr/1fr 61%;
+  }
 
-    @include tablets {
-      padding: 110px 0 330px 0;
-      grid-template-rows: 0.95fr 2fr;
-    }
-    @include phones {
-      grid-template-rows: 1fr 2.6fr;
-      padding: 100px 0 230px 0;
-    }
+  @include tablets {
+    padding: 110px 0 330px 0;
+    grid-template-rows: 0.95fr 2fr;
+  }
+
+  @include phones {
+    grid-template-rows: 1fr 2.6fr;
+    padding: 100px 0 230px 0;
+  }
 }
 
 .skills__header {
@@ -56,135 +86,22 @@
     width: 100%;
     text-align: left;
   }
-
-  & h2 {
-    color: $whiter;
-    font-size: 30px;
-    font-weight: bold;
-    margin-bottom: 46px;
-
-    @include desktop {
-      margin-bottom: 48px;
-    }
-
-    @include tablets {
-      
-      width: 60%;
-      margin: auto;
-      margin-bottom: 10px;
-    }
-
-    @include phones {
-      width: 100%;
-    }
-  }
-  & p {
-    font-weight: 600;
-    opacity: 0.5;
-    line-height: 1.88;
-  }
 }
 
-.skills__power {
-  grid-column: 2/3;
-
-
-  @include tablets {
-    padding-left: 0;
-    grid-column: 1/3;
-    
-  }
-}
-
-.skills__front {
-  margin-bottom: 30px;
+.skills__title {
+  margin-bottom: 46px;
 
   @include desktop {
-    margin-bottom: 40px;
+    margin-bottom: 48px;
   }
 
   @include tablets {
-    margin-bottom: 37px;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 10px;
   }
 
   @include phones {
-    margin-bottom: 55px;
+    width: 100%;
   }
-}
-
-.skills__front h3,
-.skills__workflow h3 {
-  color: $whiter;
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 30px;
-  text-transform: capitalize;
-
-  @include tablets {
-    font-size: 18px;
-    text-align: center;
-  }
-}
-
-
-.skills__list {
-  display: flex;
-
-  @include phones {
-    flex-wrap: wrap;
-  }
-}
-
-.skills__item {
-  position: relative;
-  margin-right: 40px;
-
-  @include tablets {
-    margin-right: 10px;
-  }
-
-  @include phones {
-    margin-right: 0;
-  }
-}
-
-.skills__item:nth-child(4) {
-  margin-right: 0;
-}
-
-
-.skills__svg {
-  width: 160px;
-  height: 160px;
-
-  @include phones {
-    width: 150px;
-    height: 150px;
-  }
-}
-
-.skills__circle {
-  fill: transparent;
-
-  &-under {
-    stroke-width: 2px;
-    stroke: rgba($whiter, 0.15);
-  }
-  &-above {
-    stroke-width: 6px;
-    stroke: $filling;
-    stroke-dasharray: 251;
-    stroke-dashoffset: 100;
-  }
-}
-
-
-
-.skills__name {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 18px;
-  opacity: 0.5;
 }
