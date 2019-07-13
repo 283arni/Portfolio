@@ -4,7 +4,7 @@ mixin iconList(mod)
       -var items = [{name: "insta", href: "//www.instagram.com"},{name: "vk", href: "//vk.com"},{name:"github", href: "//github.com"}]
       each item in items
         li(class = "socials__item")
-            a.socials__link( href=`${item.href}`)
+            a.socials__link( href=`${item.href}` target="_blank")
               +icon(`${item.name}`, "socials__svg"+' ' + `socials__svg_${item.name}`)
 
 

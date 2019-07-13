@@ -82,18 +82,13 @@
   transform: translate(-50%, -50%) rotate(180deg);
 }
 
-.comments__list {
-  display: flex;
-  
-  @include phones {
-    min-width: 306px;
-    overflow: hidden;
-  }
+.comments__people {
+
 }
 
+
 .comments__item {
-  display: flex;
-  max-width: 500px;
+  width: 500px;
   padding: 0 30px ;
 
   @include desktop {
@@ -106,7 +101,9 @@
   }
 }
 
-
+.comment__block {
+  display: flex;
+}
 
 .comments__icon {
   min-width: 75px;
