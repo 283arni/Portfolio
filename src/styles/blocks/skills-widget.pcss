@@ -37,7 +37,6 @@
   }
 }
 
-
 .skills__list {
   display: flex;
 
@@ -49,6 +48,10 @@
 .skills__item {
   position: relative;
   margin-right: 40px;
+
+  @include desktop {
+    margin-right: 30px;
+  }
 
   @include tablets {
     margin-right: 10px;
@@ -62,7 +65,6 @@
 .skills__item:last-child {
   margin-right: 0;
 }
-
 
 .skills__svg {
   width: 160px;
@@ -88,7 +90,6 @@
   stroke-dasharray: 251;
   transition: 1s;
 }
-
 
 .skills__name {
   position: absolute;

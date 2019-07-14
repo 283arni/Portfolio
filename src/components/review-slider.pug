@@ -5,13 +5,14 @@ script(type="text/x-texplate")#review-template
       .comments__control
         button.comments__arrow(type="button" @click="next()")
           +icon("arrow-down", "comments__click comments__click-prev")
-        button.comments__arrow(type="button" @click="previous()")
+        button.comments__arrow(type="button" @click="previous()" )
           +icon("arrow-down", "comments__click comments__click-next")
     .comments__people
       flickity(ref="flickity" :options="flickityOptions")
         li.comments__item(
           v-for="item in items"
-          :key="item.id")
+          :key="item.id"
+          )
           list(:item="item")
 
 script(type="text/x-texplate")#review-list-template

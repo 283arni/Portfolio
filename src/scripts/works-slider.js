@@ -40,7 +40,7 @@ const btns = {
   props: {
     currentWork: Object
   }
-}
+};
 
 const items = {
   template: "#slider-items",
@@ -51,14 +51,14 @@ const items = {
   components: {
     btns
   }
-}
+};
 
 const number = {
   template: "#slider-number",
   props: {
     currentWork: Object
   }
-}
+};
 
 const slider = {
   template: "#slider-screen",
@@ -68,14 +68,13 @@ const slider = {
   },
   methods: {
     handleSlide(way) {
-      this.$emit('slide', way)
+      this.$emit('slide', way);
     }
-    
   },
   components: {
     items, number
   }
-}
+};
 
 
 const tags = {
@@ -83,7 +82,7 @@ const tags = {
   props: {
     tags: Array
   }
-}
+};
 
 const info = {
   template: "#slider-info",
@@ -92,15 +91,13 @@ const info = {
   },
   computed: {
     tagsInArray() {
-      return this.currentWork.skills.split(", ")
+      return this.currentWork.skills.split(", ");
     }
   },
   components: {
     tags
   }
-}
-
-
+};
 
 new Vue ({
   el: "#slider-conteiner",
@@ -112,11 +109,11 @@ new Vue ({
     return {
       works: [],
       currentIndex: 0
-    }
+    };
   },
   computed: {
     currentWork() {
-      return this.works[this.currentIndex]
+      return this.works[this.currentIndex];
     }
   },
   methods: {
@@ -125,7 +122,7 @@ new Vue ({
         const requirPic = require(`../images/content/${item.pic}`);
         item.pic = requirPic;
         return item;
-      })
+      });
     },
     handleSlide(way) {
       switch(way) {
@@ -136,13 +133,11 @@ new Vue ({
           this.currentIndex--;
           break;
       }
-      
     }
   },
   created() {
-    data;
     this.works = this.makeImages(data);
   }
-})
+});
 
 

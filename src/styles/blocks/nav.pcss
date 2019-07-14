@@ -18,12 +18,19 @@
   flex-wrap: wrap;
 }
 
-
 .nav__item {
   margin-right: 60px;
 
+  @include desktop {
+    margin-right: 70px;
+  }
+
   @include tablets {
     margin-bottom: 10px;
+  }
+
+  @include phones {
+    margin-bottom: 15px;
   }
 
   &:last-child {

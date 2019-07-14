@@ -5,13 +5,16 @@
   overflow: hidden;
   z-index: -20;
 
+  @include desktop {
+    height: 1350px;
+  }
+
   @include noneParallax {
     background: url("../images/content/bg_parallax.png");
     background-size: cover;
     background-position: center;
   }
 }
-
 
 .parallax__wrapper {
   position: relative;
@@ -58,6 +61,12 @@
     
     @include desktopHd {
       top: 900px;
+    }
+  }
+
+  &:nth-child(5) {
+    @include desktop {
+      background: linear-gradient(rgba($wrapper, 0) 60%, rgba($wrapper, 1) 90%);
     }
   }
 }
