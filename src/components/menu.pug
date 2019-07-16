@@ -1,0 +1,10 @@
+script#menu(type="template")
+  .menu__overflow
+    .menu__container
+      .menu__cross
+        .menu__wrapper
+          +icon("cross", "menu__svg")
+      include nav
+      +menu("menu")
+      include socials
+      +iconList("menu")

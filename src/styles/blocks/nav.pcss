@@ -12,9 +12,28 @@
   display: block;
 }
 
+.nav_menu {
+  display: block;
+  margin-bottom: 55px;
+
+  & .nav__list {
+    color: $text-color;
+    display: block;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  & .nav__item {
+    margin-bottom: 35px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
 .nav__list {
   display: flex;
-  color: $whiter;
   flex-wrap: wrap;
 }
 
