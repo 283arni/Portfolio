@@ -3,9 +3,17 @@ script(type="text/x-texplate")#review-template
     .comments__header
       h2.comments__title.title Что обо мне говорят
       .comments__control
-        button.comments__arrow(type="button" @click="next()")
-          +icon("arrow-down", "comments__click comments__click-prev")
-        button.comments__arrow(type="button" @click="previous()" )
+        button.comments__arrow( 
+          type="button" 
+          @click="next(), handleSlide('next')" 
+          :disabled="this.currentIndex >= this.items.length-1"
+          )
+          +icon("arrow-down", "comments__click comments__click-prev" )
+        button.comments__arrow( 
+          type="button" 
+          @click="previous(), handleSlide('prev')" 
+          :disabled="currentIndex === 0"
+          )
           +icon("arrow-down", "comments__click comments__click-next")
     .comments__people
       flickity(ref="flickity" :options="flickityOptions")
@@ -14,7 +22,7 @@ script(type="text/x-texplate")#review-template
           :key="item.id"
           )
           list(:item="item")
-
+          
 script(type="text/x-texplate")#review-list-template
   .comment__block
     .comments__icon

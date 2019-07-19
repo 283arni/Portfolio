@@ -1,5 +1,7 @@
-import Vue from "vue";
 import Flickity from 'vue-flickity';
+import Vue from "vue";
+
+
 
 var data =  [
   {
@@ -29,7 +31,35 @@ var data =  [
     "name": "Владимир Сабанцев",
     "position": "Преподаватель",
     "text": "Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах"
-  }               
+  },
+  {
+    "id": "4",
+    "url": "saban.png",
+    "name": "Владимир Сабанцев",
+    "position": "Преподаватель",
+    "text": "Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах"
+  },
+  {
+    "id": "5",
+    "url": "saban.png",
+    "name": "Владимир Сабанцев",
+    "position": "Преподаватель",
+    "text": "Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах"
+  },
+  {
+    "id": "6",
+    "url": "saban.png",
+    "name": "Владимир Сабанцев",
+    "position": "Преподаватель",
+    "text": "Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах"
+  },
+  {
+    "id": "7",
+    "url": "saban.png",
+    "name": "Владимир Сабанцев",
+    "position": "Преподаватель",
+    "text": "Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах"
+  }                              
 ];
 
 const list = {
@@ -57,8 +87,8 @@ new Vue({
         // any options from Flickity can be used
       },
       items: [],
-      currentIndex: 0
-
+      currentIndex: 0,
+      numForCompare: 3
     };
   },
   methods: {
@@ -74,12 +104,33 @@ new Vue({
     },
     previous() {
       this.$refs.flickity.previous();
-    }
-    
+    },    
+    handleSlide(way) {
+      var num = 3;
+      if( window.innerWidth <= 480 ) {
+        switch(way) {
+          case "next":
+            this.currentIndex++;
+            break;
+          case "prev":
+            this.currentIndex--;
+            break; 
+          }
+        }; 
+      if( window.innerWidth > 480 ) {
+        switch(way) {
+          case "next":
+            this.currentIndex = this.currentIndex + this.numForCompare;
+            break;
+          case "prev":
+            this.currentIndex = this.currentIndex - this.numForCompare;
+            break;
+        }
+      }
+      console.log(this.currentIndex)
+    } 
   },
   created() {
     this.items = this.makeImages(data);
   }
-
-
 });
