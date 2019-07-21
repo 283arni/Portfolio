@@ -127,7 +127,6 @@ new Vue({
             break;
         }
       }
-      console.log(this.currentIndex)
     } 
   },
   created() {

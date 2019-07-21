@@ -9,38 +9,38 @@
           .header__name Арнаутов Александр
           .header__title Панель администрирования
           .header__exit
-            a.header__exit-link(href="#") Выйти
-    nav.nav
-      .container.container_admin
-        .nav__wrapper
-          ul.nav__list
-            li.nav__item.active
-              a.nav__link Обо мне
-            li.nav__item
-              a.nav__link Работы
-            li.nav__item
-              a.nav__link Отзывы
-    .bg-page
+            a.header__exit-link.link-hover(href="#") Выйти
+    .bg-page        
+      nav.nav
+        .container.container_admin
+          .nav__wrapper
+            ul.nav__list
+              li.nav__item.active
+                a.nav__link Обо мне
+              li.nav__item
+                a.nav__link Работы
+              li.nav__item
+                a.nav__link Отзывы
       .container.container_admin
         section.about
-          h2.about__header Блок &#171Обо мне&#187
-          ul.about__list.about__wrapper
+          h2.title-admin Блок &#171Обо мне&#187
+          ul.about__list
             li.about__block
               .about__add
-                .about__team-name
+                .about__team-name.headline
                   input(type="text" placeholder="Название новой группы").input.about__name
                   .about__icons
-                    .svg.about__check
-                    .svg.about__cross
+                    button.btn-hover.svg.about__check
+                    button.btn-hover.svg.about__cross
                 .about__new
                   input.input.about__new-skill(type="text" placeholder="Новый навык")
                   input.input.about__pricents(type="text" placeholder="100 %")
-                  button.about__btn-add +
+                  button.btn-hover.about__btn-add +
             li.about__block
               .about__add
-                .about__team-name 
+                .about__team-name.headline 
                   .about__front Frotend
-                  .svg.about__pencil
+                  button.btn-hover.svg.about__pencil
                 .about__skills
                   tr.about__row
                     td.about__tag HTML5
@@ -48,76 +48,76 @@
                       span.about__number 100
                       span.about__static-ricent %
                     td.about__td-svg
-                      .svg.about__pencil
-                      .svg.about__trash
+                      button.btn-hover.svg.about__pencil
+                      button.btn-hover.svg.about__trash
                   tr.about__row
                     td.about__tag CSS3
                     td.about__midline
                       span.about__number 100
                       span.about__static-ricent %
                     td.about__td-svg
-                      .svg.about__pencil
-                      .svg.about__trash
+                      button.btn-hover.svg.about__pencil
+                      button.btn-hover.svg.about__trash
                   tr.about__row
                     td.about__tag JavaScript
                     td.about__midline
                       span.about__number 100
                       span.about__static-ricent %
                     td.about__td-svg
-                      .svg.about__pencil
-                      .svg.about__trash
+                      button.btn-hover.svg.about__pencil
+                      button.btn-hover.svg.about__trash
                   tr.about__row
                     td.about__tag Jquery и Vue.js
                     td.about__midline
                       span.about__number 100
                       span.about__static-ricent %
                     td.about__td-svg
-                      .svg.about__pencil
-                      .svg.about__trash
+                      button.btn-hover.svg.about__pencil
+                      button.btn-hover.svg.about__trash
                 .about__new
                   input.input.about__new-skill(type="text" placeholder="Новый навык")
                   input.input.about__pricents(type="text" placeholder="100 %")
-                  button.about__btn-add +
+                  button.btn-hover.about__btn-add +
         section.works
-          h2.works__header Блок &#171Работы&#187
+          h2.title-admin Блок &#171Работы&#187
           .works__add
             .works__wrapper
-              .works__title
-                .works__edit Редактирование работы
+              .headline
+                .headline__title Редактирование работы
               form.works__form
                 .works__container
                   .works__download
-                    .works__download-text.text__opac Перетащите или загрузите для загрузки изображения
-                    a.works__download-link.btn Загрузите
+                    .works__download-text.name-form Перетащите или загрузите для загрузки изображения
+                    button.works__download-btn.btn Загрузите
                   .works__description
                     label(type="name").works__label
-                      .works__name.text__opac Название
+                      .name-form Название
                       input.input.works__input#name(type="text" placeholder="Дизайн сайта для авто салона Porsche")
                     label(for="link").works__label 
-                      .works__name.text__opac Ссылка
+                      .name-form Ссылка
                       input.input.works__input#link(type="text" placeholder="https://www.porsche-pulkovo.ru")
                     label(for="textarea").works__label
-                      .works__name.text__opac Описание
+                      .name-form Описание
                       textarea.works__area.textarea#textarea(placeholder="Порше Центр Пулково - является официальным дилером марки Порше в Санкт-Петербурге и предоставляет полный цикл услуг по продаже и сервисному обслуживанию автомобилей")
                     label(for="tags").works__label
-                      .works__name.text__opac Добавление тэга
+                      .name-form Добавление тэга
                       input.input.works__input#tags(type="text" placeholder="Jquery, Vue.js, HTML5" )
                     ul.works__list
                       li.works__item
                         span.works__name-tag HTML
-                        .works__cross
+                        button.btn-hover.works__cross
                       li.works__item
                         span.works__name-tag CSS
-                        .works__cross
+                        button.btn-hover.works__cross
                       li.works__item
                         span.works__name-tag Javascript
-                        .works__cross                                                
+                        button.btn-hover.works__cross                                                
                 .btns
-                  button.btn__cancellation Отмена
+                  button.btn-hover.btn__cancellation Отмена
                   button.btn__save.btn Сохранить
           ul.works__createds
             li.works__createds-item
-              button.big-btn
+              button.btn-hover.big-btn
                 .big-btn__circle
                   span.big-btn__pluse +
                 .big-btn__text Добавить работу
@@ -133,78 +133,84 @@
               .works__sample-container
                 .works__sample-title Сайт школы образования
                 .works__sample-text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                a.works__sample-link(hraf="http://loftschool.ru") http://loftschool.ru
+                .works__sample-wrapper
+                  a.works__sample-link.link-hover(href="http://loftschool.ru" target="_blank") http://loftschool.ru
                 .edit
-                  .edit__rule
+                  button.btn-hover.edit__rule
                     span.edit__row Править
                     .edit__pencil
-                  .edit__rule
+                  button.btn-hover.edit__rule
                     span.edit__row Удалить
                     .edit__cross
         section.review
-          h2.review__title Блок &#171Отзыв&#187
+          h2.title-admin Блок &#171Отзыв&#187
           .review__add
             .review__wrapper
-              .review__header 
-                .review__new-review Новый отзыв
+              .headline 
+                .headline__title Новый отзыв
               form.review__form
                 .review__container
                   .review__avatar
                     .review__circle
                       .review__svg
-                    a.review__add-photo(href="#") Добавить фото
+                    a.review__add-photo.link-hover(href="#") Добавить фото
                   .review__inputs
                     .review__person
-                      label(for="person").review__label
-                        .review__name.text__opac Имя автора
+                      label(for="person").review__label.review__label_indent
+                        .name-form Имя автора
                         input.input.review__input#person(type="text" placeholder="Ковальчук Дмитрий")
                       label(for="position").review__label
-                        .review__name.text__opac Титул автора
+                        .name-form Титул автора
                         input.input.review__input#position(type="text" placeholder="Основатель LoftSchool")
                     label(for="review-textarea").review__label
-                      .review__name.text__opac Отзыв
+                      .name-form Отзыв
                       textarea.review__textarea.textarea#review-textarea(type="textarea" placeholder="Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!")
                 .btns
-                  button.btn__cancellation Отмена
+                  button.btn-hover.btn__cancellation Отмена
                   button.btn__save.btn Сохранить
           ul.review__createds
             li.review__createds-item
-              button.big-btn
+              button.btn-hover.big-btn
                 .big-btn__circle
                   span.big-btn__pluse +
                 .big-btn__text Добавить отзыв
             li.review__createds-item
               .review__createds-container
-                .review__createds-human
+                .review__createds-human.headline
                   img.review__createds-avatar(src="../images/content/saban.png", alt="Аватарка")
                   .review__createds-data
                     .review__createds-name Владимир Сабанцев
                     .review__createds-position Преподаватель
                 .review__createds-text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
                 .edit
-                  .edit__rule
+                  button.btn-hover.edit__rule
                     span.edit__row Править
                     .edit__pencil
-                  .edit__rule
+                  button.btn-hover.edit__rule
                     span.edit__row Удалить
                     .edit__cross
-
-
-
-
-
-
-
-              
-                      
-                          
-
-
-
-
-
-
+        .auto
+          .auto__overlay
+            .auto__content
+              .auto__close
+                button.btn-hover.auto__cross
+              .auto__title Авторизация
+              form.auto__form
+                label(for="login").auto__label
+                  .auto__svg_avatar.auto__svg
+                  .auto__block
+                    .name-form Логин
+                    input.auto__input#login
+                label(for="password").auto__label
+                  .auto__svg_tick.auto__svg
+                  .auto__block
+                    .name-form Пароль
+                    input.auto__input#password
+                .auto__push
+                  button.auto__btn.btn Отправить
 </template>
+
+
 <style lang="postcss">
   @import "../styles/mixins.pcss";
 
@@ -212,21 +218,50 @@
 
   @import "normalize.css";
 
+  .headline {
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(#000, 0.15);
+  }
+
+  .headline__edit {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .title-admin {
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 60px;
+
+    @include phones {
+      padding-left: 20px;
+    }
+  }
+
   .btns {
     display: flex;
     justify-content: flex-end;
+    
+    @include tablets {
+      justify-content: center;
+    }
   }
 
   .btn {
     text-transform: uppercase;
     color: #fff;
     font-weight: bold;
-    background: linear-gradient(to right, #006aed, #3f35cb);
-    border-radius: 30px;
+    background: linear-gradient(to right, #f29400, #ea7400);
+    transition: 0.4s;
+
+    &:hover {
+      border-radius: 30px;
+    }
+
   }
 
   .btn__cancellation {
-    color: #383bcf;
+    color: #ea7400;
     background-color: transparent;
     font-weight: 600;
     margin-right: 30px;
@@ -244,7 +279,12 @@
     width: 100%;
     height: 100%;
     color: #fff;
-    background: linear-gradient(to right, #006aed, #3f35cb);
+    background: linear-gradient(to right, #f29400, #ea7400);
+    
+    @include phones {
+      flex-direction: row;
+      padding: 30px 0;
+    }
   }
 
   .big-btn__circle {
@@ -257,6 +297,14 @@
     font-size: 72px;
     border: 2px solid #fff;
     margin-bottom: 30px;
+
+    @include phones {
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+      margin-bottom: 0;
+      margin-right: 20px;
+    }
   }
 
   .big-btn__text {
@@ -264,19 +312,37 @@
     font-weight: bold;
   }
 
-    .edit {
+  .btn-hover {
+    transition: 0.4s;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  .link-hover {
+    transition: 0.4s;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      border-bottom-color: #ea7400;
+    }
+  }
+
+  .edit {
     display: flex;
     justify-content: space-between;
   }
 
   .edit__rule {
     display: flex;
-    align-items: center;
+    background-color: transparent;
   }
 
   .edit__row {
     opacity: 0.5;
     padding-right: 10px;
+    font-weight: 600;
   }
 
   .edit__cross {
@@ -296,7 +362,8 @@
     height: 15px;
   }
 
-  .text__opac {
+  .name-form {
+    margin-bottom: 20px;
     opacity: 0.4;
   }
 
@@ -304,12 +371,29 @@
     border: 1px solid rgba(#000, 0.15);
     padding: 10px 20px;
     resize: none;
+    transition: 0.3s;
 
     &::placeholder {
       line-height: 1.88;
     }
-  }
 
+    &:focus {
+      border-color: #ea7400;
+      outline: none;
+    }
+  }
+  
+  .input {
+    border: transparent;
+    border-bottom: 1px solid #000;
+    padding: 10px 0;
+    transition: 0.3s;
+    outline: none;
+
+    &:focus {
+      border-bottom-color: #ea7400;
+    }
+  }
 
   .header {
     background-image: linear-gradient(to right, #3e3e59, #454573);
@@ -335,14 +419,17 @@
   }
 
   .header__name {
-    font-size: 18px;
     font-weight: 600;
-    margin-right: 28px;
+    margin-right: 20px;
   }
 
   .header__title {
     font-size: 14px;
     opacity: 0.5;
+
+    @include phones {
+      display: none;
+    }
   }
 
   .header__exit {
@@ -351,9 +438,17 @@
     opacity: 0.7;
   }
 
+  .nav {
+    margin-bottom: 40px;
+    background-color: #fff;
+  }
 
   .nav__list {
     display: flex;
+
+    @include phones {
+      justify-content: center;
+    }
   }
 
   .nav__item {
@@ -364,37 +459,39 @@
     text-align: center;
 
     &.active {
-      color: #383bcf;
+      color: #ea7400;
       font-weight: 600;
-      border-bottom: 3px solid #383bcf;
+      border-bottom: 3px solid #ea7400;
     }
   }
 
   .bg-page {
-    background:  linear-gradient(rgba(#fff, 0.9)), url("../images/content/bg_parallax.png");
+    background: linear-gradient(rgba(#fff, 0.9)), url("../images/content/bg_parallax.png");
     background-size: cover;
     background-repeat: no-repeat;
     padding: 50px 0;
     color: #414c63;
+
+    @include phones {
+      padding: 0;
+    }
   }
 
   .about {
     margin-bottom: 50px;
   }
 
-  .about__wrapper {
+  .about__list {
     display: flex;
-  }
 
-  .about__header {
-    font-size: 21px;
-    font-weight: bold;
-    margin-bottom: 60px;
+    @include phones {
+      display: block;
+    }
   }
 
   .about__block {
     display: flex;
-    min-width: 525px;
+    width: 48%;
     min-height: 387px;
     padding: 30px;
     background-color: #fff;
@@ -403,6 +500,11 @@
 
     &:last-child {
       margin-right: 0;
+    }
+
+    @include phones {
+      width: 100%;
+      margin-bottom: 20px;
     }
   }
 
@@ -416,8 +518,8 @@
   .about__team-name {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid rgba(#1f232d, 0.15);
-    padding-bottom: 20px;
+    font-weight: 600;
+    font-size: 18px;
   }
 
   .about__new {
@@ -430,28 +532,22 @@
   }
 
   .about__new-skill {
-    width: 218px;
+    width: 50%;
     margin-right: 10px;
   }
 
   .about__pricents {
-    width: 74px;
+    width: 20%;
     margin-right: 30px;
   }
 
   .about__btn-add {
-    width: 40px;
+    min-width: 40px;
     height: 40px;
-    color:#fff;
+    color: #fff;
     font-size: 30px;
     border-radius: 50%;
-    background: linear-gradient(to right, #006aed, #3f35cb);
-  }
-
-  .input {
-    border: transparent;
-    border-bottom: 1px solid #000;
-    padding: 10px 0;
+    background: linear-gradient(to right, #f29400, #ea7400);
   }
 
   .about__row {
@@ -468,7 +564,6 @@
     }
   }
 
-
   .about__td-svg {
     display: flex;
     justify-content: flex-end;
@@ -477,7 +572,6 @@
       margin-right: 10px;
     }
   }
-
 
   .about__check {
     margin-right: 20px;
@@ -496,19 +590,15 @@
     background: svg-load("trash.svg", fill="#414c63", width="100%", height="100%");
   }
 
-
-
-  .works__header {
-    font-size: 21px;
-    font-weight: bold;
-    margin-bottom: 60px;
-  }
-
   .works__add {
     background-color: #fff;
     font-weight: 600;
     box-shadow: 4.1px 2.9px 20px 0 rgba(0, 0, 0, 0.07);
     margin-bottom: 30px;
+
+    @include phones {
+      margin-bottom: 20px;
+    }
   }
 
   .works {
@@ -519,21 +609,19 @@
     padding: 30px;
   }
 
-  .works__title {
-    padding-bottom: 25px;
-    margin-bottom: 45px;
-    border-bottom: 1px solid rgba(#000, 0.15);
-  }
-
-  .works__edit {
-    font-size: 18px;
-    font-weight: bold;
-  }
-
-
   .works__container {
     display: flex;
     margin-bottom: 40px;
+    padding-top: 45px;
+
+    @include tablets {
+      display: block;
+      padding: 0 15%;
+    }
+
+    @include phones {
+      padding: 0;
+    }
   }
 
   .works__download {
@@ -546,6 +634,12 @@
     border: 1px dashed #a1a1a1;
     background-color: #dee4ed;
     margin-right: 30px;
+
+    @include tablets {
+      padding: 50px 0;
+      margin-right: 0;
+      margin-bottom: 50px;
+    }
   }
 
   .works__download-text {
@@ -555,9 +649,7 @@
     margin-bottom: 27px;
   }
 
-
-
-  .works__download-link {
+  .works__download-btn {
     padding: 15px 40px;
     
   }
@@ -570,10 +662,6 @@
     display: block;
     margin-bottom: 30px;
 
-  }
-
-  .works__name {
-    margin-bottom: 20px;
   }
 
   .works__input,
@@ -613,25 +701,42 @@
     width: 10px;
     height: 10px;
     background: svg-load("cross.svg", fill="#414c63", width="100%", height="100%");
+    background-repeat: no-repeat;
   }
-
 
   .works__createds {
     display: flex;
     font-weight: 600;
+    
+    @include tablets {
+      justify-content: space-between;
+    }
+
+    @include phones {
+      display: block;
+    }
   }
 
   .works__createds-item {
     width: 340px;
     min-height: 556px;
     margin-right: 30px;
+    
+    @include tablets {
+      width: 48%;
+      margin-right: 0;
+    }
+
+    @include phones {
+      width: 100%;
+      min-height: auto;
+      margin-bottom: 20px;
+    }
 
     &:last-child {
       margin-right: 0;
     }
   }
-
-
 
   .works__sample {
     background-color: #fff;
@@ -684,20 +789,24 @@
     opacity: 0.5;
   }
 
-  .works__sample-link {
-    display: block;
-    color: #383bcf;
+  .works__sample-wrapper {
     margin-bottom: 45px;
   }
 
-  .review__title {
-    font-size: 21px;
-    font-weight: bold;
-    margin-bottom: 60px;
+  .works__sample-link {
+    color: #ea7400;
+  }
+
+  .review {
+    margin-bottom: 40px;
   }
 
   .review__add {
     margin-bottom: 30px;
+
+    @include phones {
+      margin-bottom: 20px;
+    }
   }
 
   .review__wrapper {
@@ -707,22 +816,22 @@
     box-shadow: 4.1px 2.9px 20px 0 rgba(0, 0, 0, 0.07);
   }
 
-  .review__header {
-    border-bottom: 1px solid rgba(#000, 0.15);
-    padding-bottom: 30px;
-    margin-bottom: 45px;
-  }
+  .review__form {
+    width: 85%;
 
-
-
-  .review__new-review {
-    font-size: 18px;
+    @include tablets {
+      width: 100%;
+    }
   }
 
   .review__container {
-    width: 80%;
     display: flex;
     margin-bottom: 30px;
+    padding-top: 45px;
+
+    @include phones {
+      display: block;
+    }
   }
 
   .review__avatar {
@@ -732,6 +841,11 @@
     align-items: center;
     justify-content: center;
     margin-right: 30px;
+
+    @include phones {
+      margin-right: 0;
+      margin-bottom: 40px;
+    }
   }
 
   .review__circle {
@@ -753,7 +867,7 @@
   }
 
   .review__add-photo {
-    color: #383bcf;
+    color: #ea7400;
   }
 
   .review__inputs {
@@ -762,16 +876,23 @@
   }
 
   .review__label {
+    display: block;
     flex: 1;
     margin-right: 30px;
 
     &:last-child {
       margin-right: 0;
     }
+
+    @include tablets {
+      margin-right: 0;
+    }
   }
 
-  .review__name {
-    margin-bottom: 20px;
+  .review__label_indent {
+    @include tablets {
+      margin-bottom: 20px;
+    }
   }
 
   .review__textarea {
@@ -794,11 +915,28 @@
   .review__person {
     display: flex;
     margin-bottom: 40px;
+
+    @include tablets {
+      display: block;
+      width: 70%;
+    }
+
+    @include phones {
+      width: 100%;
+    }
   }
 
   .review__createds {
     display: flex;
     font-weight: 600;
+
+    @include tablets {
+      justify-content: space-between;
+    }
+
+    @include phones {
+      display: block;
+    }
   }
   
   .review__createds-item {
@@ -809,6 +947,17 @@
 
     &:last-child {
       margin: 0;
+    }
+
+    @include tablets {
+      width: 48%;
+    }
+
+    @include phones {
+      width: 100%;
+      min-height: auto;
+      margin-right: 0;
+      margin-bottom: 20px;
     }
   }
 
@@ -822,9 +971,7 @@
   }
 
   .review__createds-human {
-    padding-bottom: 30px;
     display: flex;
-    border-bottom: 1px solid rgba(#000, 0.15);
   }
 
   .review__createds-avatar {
@@ -848,8 +995,97 @@
   .review__createds-text {
     opacity: 0.7;
     line-height: 1.88;
+
+    @include phones {
+      margin-bottom: 20px;
+    }
   }
 
+  .auto__overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .auto__content {
+    max-width: 500px;
+    background-color: #fff;
+    font-weight: 600;
+    color: #414c63;
+    padding: 30px;
+  }
+
+  .auto__close {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .auto__cross {
+    width: 20px;
+    height: 20px;
+    background: svg-load("cross.svg", fill="#414c63", width="100%", height="100%");
+    background-repeat: no-repeat;
+  }
+
+  .auto__title {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 34px;
+  }
+
+  .auto__block {
+    width: 100%;
+  }
+
+  .auto__label {
+    display: flex;
+    align-items: flex-end;
+    border-bottom: 1px solid #000;
+    margin-bottom: 40px;
+    transition: 0.4s;
+
+    &:focus-within {
+      border-bottom-color: #ea7400;
+    }
+
+    &:focus-within .auto__svg_avatar {
+      background: svg-load("user.svg", fill="#ea7400", width="100%", height="100%");
+      background-repeat: no-repeat;
+    }
+
+    &:focus-within .auto__svg_tick {
+      background: svg-load("tick.svg", fill="#ea7400", width="100%", height="100%");
+      background-repeat: no-repeat;
+    }
+  }
+
+  .auto__input {
+    border-color: transparent;
+    line-height: 2.67;
+    font-weight: 600;
+    width: 100%;
+  }
+
+  .auto__svg_avatar {
+    background: svg-load("user.svg", fill="#414c63", width="100%", height="100%");
+  }
+
+  .auto__svg_tick {
+    background: svg-load("tick.svg", fill="#414c63", width="100%", height="100%");
+  }
+
+  .auto__svg {
+    width: 30px;
+    height: 30px;
+    opacity: 0.3;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    background-repeat: no-repeat;
+  }
+
+  .auto__btn {
+    padding: 30px 140px;
+  }
 
 </style>
 
