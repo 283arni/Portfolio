@@ -35,7 +35,7 @@ body {
   width: 95%;
 
   @include desktop {
-    max-width: 1080px;
+    max-width: 1150px;
   }
 
   @include tablets {
@@ -45,6 +45,10 @@ body {
   @include phones {
     max-width: 300px;
   }
+}
+
+.container_admin {
+  max-width: 1080px;
 }
 
 .container_full-screen {
@@ -70,6 +74,9 @@ button {
 ul {
   padding: 0;
   margin: 0;
+}
+
+li {
   list-style: none;
 }
 
@@ -112,6 +119,10 @@ blockquote {
 .title {
   font-size: 30px;
   font-weight: bold;
+
+  @include desktop {
+    font-size: 36px;
+  }
 
   @include phones {
     font-size: 24px;

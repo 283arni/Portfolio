@@ -7,11 +7,11 @@
   padding: 140px 0 165px 0;
 
   @include desktop {
-    padding: 140px 0 180px 0;
+    padding: 150px 0 180px 0;
   }
 
   @include tablets {
-    padding-bottom: 130px;
+    padding: 135px 0 130px 0;
   }
 
   @include phones {
@@ -30,4 +30,11 @@
   background: url("../images/content/leaf_1.png"), url("../images/content/leaf_2.png"), url("../images/content/leaf_3.png"), url("../images/content/leaf_4.png");
   background-repeat: no-repeat;
   background-position: 0% 50%, 100% 75%, left bottom, top right;
+  z-index: 0;
+
+  @include tablets {
+    height: 1400px;
+    right: auto;
+    left: 500px;
+  }
 }

@@ -12,18 +12,44 @@
   display: block;
 }
 
-.nav__list {
-  display: flex;
-  color: $whiter;
-  flex-wrap: wrap;
+.nav_menu {
+  display: block;
+  margin-bottom: 55px;
+
+  & .nav__list {
+    color: $text-color;
+    display: block;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  & .nav__item {
+    margin-bottom: 35px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
+.nav__list {
+  display: flex;
+  flex-wrap: wrap;
+}
 
 .nav__item {
   margin-right: 60px;
 
+  @include desktop {
+    margin-right: 70px;
+  }
+
   @include tablets {
     margin-bottom: 10px;
+  }
+
+  @include phones {
+    margin-bottom: 15px;
   }
 
   &:last-child {

@@ -8,11 +8,11 @@ function moveScroll(yScroll) {
     const strafe = yScroll * divider/20;
 
     layer.style.transform = `translateY(-${strafe}%)`;
-  })
+  });
 }
 
 window.addEventListener("scroll", e => {
-  const yScroll = pageYOffset;
-  moveScroll(yScroll);
-}
-)
+    const yScroll = pageYOffset;
+    moveScroll(yScroll);
+  }
+);
