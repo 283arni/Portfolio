@@ -49,6 +49,10 @@ body {
 
 .container_admin {
   max-width: 1080px;
+
+  @include phones {
+    width: 100%;
+  }
 }
 
 .container_full-screen {
@@ -65,6 +69,40 @@ body {
 button {
   border: 0;
   cursor: pointer;
+}
+
+
+.btn-sub {
+  @include tablets {
+    text-align: center;
+  }
+}
+
+.btn-sub__push {
+  padding: 30px 118px;
+  text-transform: uppercase;
+  color: $whiter;
+  font-size: 18px;
+  font-weight: bold;
+  background: linear-gradient(to right, rgb($filling), rgb($filling-dark));
+  border: none;
+  transition: 0.4s;
+
+  @include desktop {
+    padding: 33px 128px;
+  }
+
+  @include tablets {
+    padding: 35px 140px;
+  }
+
+  @include phones {
+    padding: 24px 90px;
+  }
+}
+
+.btn-sub__push:hover {
+  border-radius: 40px;
 }
 
 * {

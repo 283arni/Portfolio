@@ -1,23 +1,26 @@
-form.form(action="" name="form")
+form.form.j-form(action="" name="form")
   .form__data
     label.form__label.form__label_alignment(for="name")
       .form__svg
         +icon("user", "form__icon")
-      .form__block
+      .form__block.j-name.j-block
         .form__name Введите ваше имя
         input.form__enter-text#name(type="text" placeholder="Ковальчук Дмитрий")
+        .form__error.j-error
     label.form__label(for="email")
       .form__svg
         +icon("envelope", "form__icon")
-      .form__block
+      .form__block.j-email.j-block
         .form__name Введите ваш email
         input.form__enter-text#email(type="mail" placeholder="loftschool@study.com")
+        .form__error.j-error
   .form__message
     label.form__label(for="message")
       .form__svg.form__svg_up
         +icon("message", "form__icon")
-      .form__block
+      .form__block.j-text.j-block
         .form__name Сообщение к письму
         textarea.form__enter-text#message(type="textarea" rows="2"  placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса")
-  .form__btn
-    button.form__push(type="submit") Отправить
+        .form__error.j-error
+  .btn-sub
+    button.btn-sub__push.j-btn(type="submit") Отправить

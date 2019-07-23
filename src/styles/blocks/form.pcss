@@ -74,6 +74,7 @@
 
 .form__block {
   width: 100%;
+  position: relative;
 }
 
 .form__svg {
@@ -110,35 +111,17 @@
   color: $whiter;
 }
 
-.form__btn {
-  @include tablets {
-    text-align: center;
-  }
+.form__error {
+  position: absolute;
+  width: 80%;
+  background-color: #bf2929;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid #fff;
+  padding: 5px;
+  display: none;
 }
 
-.form__push {
-  padding: 30px 118px;
-  text-transform: uppercase;
-  color: $whiter;
-  font-size: 18px;
-  font-weight: bold;
-  background: linear-gradient(to right, rgb($filling), rgb($filling-dark));
-  border: none;
-  transition: 0.4s;
-
-  @include desktop {
-    padding: 33px 128px;
-  }
-
-  @include tablets {
-    padding: 35px 140px;
-  }
-
-  @include phones {
-    padding: 24px 90px;
-  }
-}
-
-.form__push:hover {
-  border-radius: 40px;
+.form__vis {
+  display: block;
 }
