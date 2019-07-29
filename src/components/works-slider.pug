@@ -23,7 +23,7 @@ script(src="text/x-template")#slider-screen
 
 script(src="text/x-template")#slider-items
   .works__samples
-    ul.works__samples-list
+    ul.works__samples-list(:style="{transform: `translateX(-${translate}%)`}")
       li.works__samples-item(
         v-for= "work in works"
         :class="{active: work.id === currentWork.id}"
@@ -32,6 +32,7 @@ script(src="text/x-template")#slider-items
     btns(
       @slide="way => $emit('slide', way)"
       :currentWork="currentWork"
+      :works="works"
     )
 
 script(src="text/x-template")#slider-number
@@ -39,7 +40,7 @@ script(src="text/x-template")#slider-number
 
 script(src="text/x-template")#slider-controls
   .works__slider-controls
-    button.works__slider-btn(@click ="$emit('slide', 'next')"  :disabled="currentWork.id === 4")
+    button.works__slider-btn(@click ="$emit('slide', 'next')"  :disabled="currentWork.id === works.length")
       +icon("arrow-down", "works__slider-icon works__slider-icon_next")
     button.works__slider-btn(@click ="$emit('slide', 'prev')"  :disabled="currentWork.id === 1")
       +icon("arrow-down", "works__slider-icon works__slider-icon_prev")
