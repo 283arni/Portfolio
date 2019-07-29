@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 https://283arni.github.io/Portfolio/
 
 1. Установить yarn, npm.
