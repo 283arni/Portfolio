@@ -1,0 +1,171 @@
+.comments__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 90px;
+
+  @include desktop {
+    margin-bottom: 100px;
+  }
+  
+  @include tablets {
+    margin-bottom: 70px;
+  }
+
+  @include phones {
+    flex-direction: column;
+    margin-bottom: 35px;
+  }
+}
+
+.comments__title {
+  margin-right: 95px;
+
+  @include desktop {
+    margin-right: 125px;
+  }
+
+  @include tablets {
+    margin-right: 60px;
+  }
+
+  @include phones {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+}
+
+.comments__control {
+  display: flex;
+}
+
+.comments__arrow {
+  width: 50px;
+  height: 50px;
+  border: solid 1px $whiter;
+  border-radius: 50%;
+  position: relative;
+  transition: 0.3s;
+  margin-right: 30px;
+
+  &:hover {
+    opacity: 0.5;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:disabled {
+    opacity: 0.2;
+  }
+}
+
+.comments__click {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  fill: $whiter;
+}
+
+.comments__click-prev {
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+
+.comments__people {
+  max-width: 1000px;
+  
+  @include phones {
+    min-width: 306px;
+    overflow: hidden;
+  }
+}
+
+.comments__item {
+  width: 50%;
+  padding: 0 30px ;
+
+  @include desktop {
+    padding: 0 10px;
+  }
+
+  @include phones {
+    min-width: 100%;
+    margin-right: 0;
+  }
+}
+
+.comment__block {
+  display: flex;
+}
+
+.comments__icon {
+  min-width: 75px;
+  height: 63px;
+  fill: rgba($whiter, 0.05);
+  margin-right: 25px;
+  
+  @include tablets {
+    min-width: 30px;
+    margin-right: 20px;
+  }
+
+  @include phones {
+    margin-right: 5px;
+  }
+}
+
+.comments__info p {
+  line-height: 1.88;
+  opacity: 0.5;
+  min-height: 120px;
+  margin-bottom: 30px;
+  font-weight: 600;
+
+  @include phones {
+    margin-bottom: 20px;
+  }
+}
+
+.comments__dude {
+  display: flex;
+  align-items: center;
+}
+
+.comments__data {
+  display: flex;
+  flex-direction: column;
+}
+
+.comments__data span {
+  &:first-child {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 15px;
+
+    @include phones {
+      margin-bottom: 8px;
+    }
+  }
+
+  &:last-child {
+    font-weight: 600;
+    opacity: 0.3;
+  }
+}
+
+.comments__pic {
+  margin-right: 30px;
+  overflow: hidden;
+
+}
+
+.comments__img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+}

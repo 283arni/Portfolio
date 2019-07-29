@@ -2,11 +2,6 @@
   "text-color": "#414c63",
   "whiter": "#ffffff",
   "link-color": "#4b6fd7",
-  "bp-desktop-hd": "1800px",
-  "bp-desktop": "1200px",
-  "bp-tablets": "768px",
-  "bp-phones": "480px",
-  "bp-skill": "617px",
   "wrapper": "#1b1f22",
   "filling-dark": "#ea7400",
   "filling": "#f29400",
@@ -18,5 +13,11 @@
   "socials": "#716a65",
   "socials-hover": "#8a817a",
   "btn-hover": "#324255",
-  "btnForm-hover": "orange"
+  "btnForm-hover": "orange",
+  "bp-desktop-hd": "1800px",
+  "bp-desktop": "1200px",
+  "noneParallax": "1025px",
+  "bp-tablets": "768px",
+  "bp-phones": "480px",
+  "bp-skill": "617px"
 }

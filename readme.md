@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 https://283arni.github.io/Portfolio/
 
 1. Установить yarn, npm.
@@ -25,3 +26,6 @@ $ yarn имя_скрипта
 
 Логин: Александр
 Пароль: 12345
+=======
+https://283arni.github.io/Portfolio/ -
+>>>>>>> 97b27951011cfdcd814304d9f097ed4422352c86

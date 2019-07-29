@@ -35,7 +35,7 @@ body {
   width: 95%;
 
   @include desktop {
-    max-width: 1080px;
+    max-width: 1150px;
   }
 
   @include tablets {
@@ -44,6 +44,14 @@ body {
 
   @include phones {
     max-width: 300px;
+  }
+}
+
+.container_admin {
+  max-width: 1080px;
+
+  @include phones {
+    width: 100%;
   }
 }
 
@@ -63,6 +71,40 @@ button {
   cursor: pointer;
 }
 
+
+.btn-sub {
+  @include tablets {
+    text-align: center;
+  }
+}
+
+.btn-sub__push {
+  padding: 30px 118px;
+  text-transform: uppercase;
+  color: $whiter;
+  font-size: 18px;
+  font-weight: bold;
+  background: linear-gradient(to right, rgb($filling), rgb($filling-dark));
+  border: none;
+  transition: 0.4s;
+
+  @include desktop {
+    padding: 33px 128px;
+  }
+
+  @include tablets {
+    padding: 35px 140px;
+  }
+
+  @include phones {
+    padding: 24px 90px;
+  }
+}
+
+.btn-sub__push:hover {
+  border-radius: 40px;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -70,6 +112,9 @@ button {
 ul {
   padding: 0;
   margin: 0;
+}
+
+li {
   list-style: none;
 }
 
@@ -112,6 +157,10 @@ blockquote {
 .title {
   font-size: 30px;
   font-weight: bold;
+
+  @include desktop {
+    font-size: 36px;
+  }
 
   @include phones {
     font-size: 24px;

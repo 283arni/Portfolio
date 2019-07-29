@@ -7,19 +7,19 @@ var data = [
       "HTML5": 40,
       "CSS3": 80,
       "Javascript": 30,
-      "Jquery и Vue.js": 140
+      "Jquery и Vue.js": 50
     }
   },
   {
     "skillsTitle": "Workflow",
     "skills": {
-      "GIT": 110,
+      "GIT": 60,
       "Terminal": 80,
       "Gulp": 30,
-      "Webpack": 150
+      "Webpack": 30
     }
   }
-]
+];
 
 const skillsList = {
   template:"#skill",
@@ -29,7 +29,7 @@ const skillsList = {
   },
   methods: {
     circleColor() {
-      const circle = this.$refs['circle'];
+      const circle = this.$refs.circle;
       let findBlcTop = this.$root.findCircle();
       const dashArray = parseInt(
         getComputedStyle(circle).getPropertyValue("stroke-dasharray")
@@ -39,17 +39,16 @@ const skillsList = {
       window.addEventListener("scroll", function() {
         const valTop = findBlcTop.findTop.getBoundingClientRect().top;
         
-        if(valTop>150 && valTop<200) {
+        if(valTop>400 && valTop<480) {
           circle.style.strokeDashoffset = percent;
         }
       });
-    
     }
   },
   mounted() {
     this.circleColor();
-}
-}
+  }
+};
 
 const row = {
   template:"#skills__row",
@@ -61,7 +60,7 @@ const row = {
   components: {
     skillsList
   }
-}
+};
 
 new Vue({
   el:"#skills__container",
@@ -72,11 +71,11 @@ new Vue({
   data(){
     return {
       items: []
-    }
+    };
   },
   methods: {
     findCircle() {
-      let circleBlock = this.$refs["skills"];
+      let circleBlock = this.$refs.skills;
       return {
         findTop: circleBlock
       };

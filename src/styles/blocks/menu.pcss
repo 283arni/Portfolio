@@ -1,0 +1,46 @@
+.menu {
+  position: fixed;
+  top: 0;
+  right: -8000px;
+  bottom: 0;
+  width: 40%;
+  z-index: 100;
+  background-color: $whiter;
+  transition: 1s;
+  
+  @include phones {
+    width: 100%;
+  }
+}
+
+.menu__overflow {
+  width: 100%;
+  height: 100%;
+}
+
+.menu_open {
+  right: 0;
+}
+
+.menu__container {
+  margin: 70px 43px 0 43px;
+
+  @include phones {
+    margin: 10% 20%;
+  }
+}
+
+.menu__cross {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 140px;
+}
+
+.menu__wrapper {
+  width: 25px;
+  height: 25px;
+}
+
+.menu__svg {
+  fill: $text-color;
+}
