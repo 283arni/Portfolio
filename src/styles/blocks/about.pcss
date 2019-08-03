@@ -3,7 +3,7 @@
   background: linear-gradient(rgba($wrapper, 0) 0%, rgba($wrapper, 1) 40%);
 
   @include desktop {
-    background-color: $wrapper;
+    background: linear-gradient(rgba($wrapper, 0) 0%, rgba($wrapper, 1) 40%);
     padding-bottom: 220px;
   }
 
@@ -55,6 +55,8 @@
 .about__avatar {
   margin-bottom: 70px;
   padding: 0 25px;
+  width: 200px;
+  height: 200px;
 
 
   @include desktop {
@@ -74,8 +76,6 @@
 }
 
 .about__img {
-  width: 200px;
-  height: 200px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center;

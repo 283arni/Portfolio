@@ -23,22 +23,39 @@ var data = [
     "title": "Сайт школы образования",
     "link": "//yandex.com",
     "pic": "mini_slaid_3.jpg",
-    "text": " 2 месяца только самых тяжелых испытаний и бессонных ночей!"
+    "text": " 2 месяца только самых тяжелых испытаний и бессонных ночей! 2 месяца только самых тяжелых испытаний и бессонных ночей! 2 месяца только самых тяжелых испытаний и бессонных ночей!"
   },
   {
     "id": 4,
-    "skills": "SASS, PostCSS, ES6",
+    "skills": "Vue.js, Git",
     "title": "Сайт школы образования",
     "link": "//rambler.com",
     "pic": "mini_slaid_4.jpg",
-    "text": "Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! "
+    "text": "Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!"
+  },
+  {
+    "id": 5,
+    "skills": "SASS, PostCSS, ES6",
+    "title": "Сайт школы образования",
+    "link": "//rambler.com",
+    "pic": "mini_slaid_2.jpg",
+    "text": "Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!"
+  },
+  {
+    "id": 6,
+    "skills": "HTML, CSS, Javascript",
+    "title": "Сайт школы образования",
+    "link": "//rambler.com",
+    "pic": "mini_slaid_4.jpg",
+    "text": "Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!"
   }
 ];
 
 const btns = {
   template: "#slider-controls",
   props: {
-    currentWork: Object
+    currentWork: Object,
+    works: Array
   }
 };
 
@@ -50,6 +67,36 @@ const items = {
   },
   components: {
     btns
+  },
+  computed: {
+    translate() {
+      const screenTablet = 768;
+
+      let currentIndex = this.currentWork.id;
+      let arr = this.works.length;
+
+      if(window.innerWidth > screenTablet) {
+        const peaceSlider = 25;
+        const quantitySlidersInWindow = 4;
+        const multiOnId = 3;
+        return stepSlider(peaceSlider, quantitySlidersInWindow, multiOnId);
+      }
+
+      if(window.innerWidth <= screenTablet) {
+        const peaceSlider = 33.3;
+        const quantitySlidersInWindow = 3;
+        const multiOnId = 2;
+        return stepSlider(peaceSlider, quantitySlidersInWindow, multiOnId);
+      }
+
+      
+      function stepSlider(width, numSliders, mult) {
+        if(currentIndex >= numSliders && currentIndex <= arr - 1) {
+          return width * (currentIndex - mult);
+        }
+        if(currentIndex < numSliders) return 0;
+      }
+    }
   }
 };
 

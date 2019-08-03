@@ -2,7 +2,6 @@ import Flickity from 'vue-flickity';
 import Vue from "vue";
 
 
-
 var data =  [
   {
     "id": "0",
@@ -20,8 +19,8 @@ var data =  [
   },
   {
     "id": "2",
-    "url": "saban.png",
-    "name": "Владимир Сабанцев",
+    "url": "koval.png",
+    "name": "Ковальчук Дмитрий",
     "position": "Преподаватель",
     "text": "Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах"
   },
@@ -34,21 +33,21 @@ var data =  [
   },
   {
     "id": "4",
-    "url": "saban.png",
+    "url": "user.jpg",
     "name": "Владимир Сабанцев",
     "position": "Преподаватель",
     "text": "Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах"
   },
   {
     "id": "5",
-    "url": "saban.png",
-    "name": "Владимир Сабанцев",
+    "url": "koval.png",
+    "name": "Ковальчук Дмитрий",
     "position": "Преподаватель",
     "text": "Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах"
   },
   {
     "id": "6",
-    "url": "saban.png",
+    "url": "user.jpg",
     "name": "Владимир Сабанцев",
     "position": "Преподаватель",
     "text": "Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах"
@@ -83,12 +82,13 @@ new Vue({
         prevNextButtons: false,
         pageDots: false,
         wrapAround: false,
-        groupCells: true
+        groupCells: true,
+        draggable: false
         // any options from Flickity can be used
       },
       items: [],
       currentIndex: 0,
-      numForCompare: 3
+      numForCompare: 3,
     };
   },
   methods: {
@@ -106,7 +106,7 @@ new Vue({
       this.$refs.flickity.previous();
     },    
     handleSlide(way) {
-      var num = 3;
+
       if( window.innerWidth <= 480 ) {
         switch(way) {
           case "next":
@@ -116,7 +116,8 @@ new Vue({
             this.currentIndex--;
             break; 
           }
-        }; 
+        }
+
       if( window.innerWidth > 480 ) {
         switch(way) {
           case "next":
@@ -127,7 +128,7 @@ new Vue({
             break;
         }
       }
-    } 
+    }
   },
   created() {
     this.items = this.makeImages(data);
