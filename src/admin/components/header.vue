@@ -3,7 +3,7 @@
     .container.container_admin
       .header__wrapper
         .header__avatar
-          img(src="../../images/content/user.jpg", class="header__img", alt="Фото администратора")
+          img(src="../../images/content/ava.jpg", class="header__img", alt="Фото администратора")
         .header__name Арнаутов Александр
         .header__title Панель администрирования
         .header__exit
