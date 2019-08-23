@@ -10,6 +10,10 @@
 
 .nav_footer {
   display: block;
+
+  & .nav__list {
+    justify-content: stretch;
+  }
 }
 
 .nav_menu {
@@ -35,22 +39,12 @@
 .nav__list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .nav__item {
-  margin-right: 60px;
-
-  @include desktop {
-    margin-right: 70px;
-  }
-
-  @include tablets {
-    margin-bottom: 10px;
-  }
-
-  @include phones {
-    margin-bottom: 15px;
-  }
+  margin-right: 7%;
+  padding: 5px 0;
 
   &:last-child {
     margin-right: 0;

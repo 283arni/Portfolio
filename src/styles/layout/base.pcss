@@ -47,6 +47,18 @@ body {
   }
 }
 
+.container_hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include tablets {
+    display: block;
+    height: 100%;
+  }
+}
+
 .container_admin {
   max-width: 1080px;
 

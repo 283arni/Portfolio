@@ -18,6 +18,12 @@
   }
 }
 
+@mixin bp-deskTab() {
+  @media screen and (max-width: $bp-deskTab) {
+    @content;
+  }
+}
+
 @mixin tablets() {
   @media screen and (max-width: $bp-tablets) {
     @content;
