@@ -1,4 +1,4 @@
-script(src="text/x-template")#slider-content
+script(type="text/x-template")#slider-content
   .works__content
     slider(
       :works="works"
@@ -9,7 +9,7 @@ script(src="text/x-template")#slider-content
       :currentWork="currentWork"
     )
 
-script(src="text/x-template")#slider-screen
+script(type="text/x-template")#slider-screen
   .works__slider
     img.works__img(:src="currentWork.pic", alt="Образец работы")
     items(
@@ -21,7 +21,7 @@ script(src="text/x-template")#slider-screen
       :currentWork="currentWork"
     )
 
-script(src="text/x-template")#slider-items
+script(type="text/x-template")#slider-items
   .works__samples
     ul.works__samples-list(:style="{transform: `translateX(-${translate}%)`}")
       li.works__samples-item(
@@ -35,17 +35,17 @@ script(src="text/x-template")#slider-items
       :works="works"
     )
 
-script(src="text/x-template")#slider-number
+script(type="text/x-template")#slider-number
   .works__slider-index {{currentWork.id}}       
 
-script(src="text/x-template")#slider-controls
+script(type="text/x-template")#slider-controls
   .works__slider-controls
     button.works__slider-btn(@click ="$emit('slide', 'next')"  :disabled="currentWork.id === works.length")
       +icon("arrow-down", "works__slider-icon works__slider-icon_next")
     button.works__slider-btn(@click ="$emit('slide', 'prev')"  :disabled="currentWork.id === 1")
       +icon("arrow-down", "works__slider-icon works__slider-icon_prev")
 
-script(src="text/x-template")#slider-info
+script(type="text/x-template")#slider-info
   .works__info
     tags(
       :tags="tagsInArray"
@@ -56,7 +56,7 @@ script(src="text/x-template")#slider-info
       +icon("link", "works__svg")
       span.works__link-text Посмотреть сайт
 
-script(src="text/x-template")#slider-tags
+script(type="text/x-template")#slider-tags
   ul.works__list
     li.works__item(v-for="tag in tags")
       .works__tag {{tag}}

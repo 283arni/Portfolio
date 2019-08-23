@@ -70,19 +70,19 @@ const items = {
   },
   computed: {
     translate() {
-      const screenTablet = 768;
+      const screenDesk = 1200;
 
       let currentIndex = this.currentWork.id;
       let arr = this.works.length;
 
-      if(window.innerWidth > screenTablet) {
+      if(window.innerWidth > screenDesk) {
         const peaceSlider = 25;
         const quantitySlidersInWindow = 4;
         const multiOnId = 3;
         return stepSlider(peaceSlider, quantitySlidersInWindow, multiOnId);
       }
 
-      if(window.innerWidth <= screenTablet) {
+      if(window.innerWidth <= screenDesk) {
         const peaceSlider = 33.3;
         const quantitySlidersInWindow = 3;
         const multiOnId = 2;
