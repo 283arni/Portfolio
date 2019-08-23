@@ -9,24 +9,17 @@
 
 .skills::before {
   position: absolute;
-  top: 350px;
-  left: 0;
-  width: 600px;
-  height: 870px;
+  top: 65px;
+  width: 100%;
+  height: 100%;
   display: block;
   content: "";
   background: url("../images/content/arms.png");
-  background-size: 100%;
   background-repeat: no-repeat;
-  
-  @include desktop {
-    width: 500px;
-    height: 730px;
-    top: 400px;
-  }
+  background-position: left bottom;
+
 
   @include tablets {
-    width: 100%;
     height: 300px;
     top: auto;
     bottom: 0;
