@@ -116,6 +116,7 @@ module.exports = (env, argv) => {
     plugins: [
       new HtmlWebpackPlugin({
         template: "src/index.pug",
+        favicon: "src/favicon.ico",
         chunks: ["main"]
       }),
       new HtmlWebpackPlugin({

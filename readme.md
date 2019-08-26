@@ -1,4 +1,4 @@
-https://283arni.github.io/Portfolio/dist
+## [Страничка проекта](https://283arni.github.io/Portfolio/dist)
 
 1. Установить yarn, node.js.
 2. $ git clone https://github.com/283arni/Portfolio.git
