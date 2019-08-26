@@ -52,7 +52,7 @@ script(type="text/x-template")#slider-info
     )
     .works__info-title {{currentWork.title}}
     p.works__info-text {{currentWork.text}}
-    a.works__link(:href="currentWork.link")
+    a.works__link(:href="currentWork.link" target="_blank")
       +icon("link", "works__svg")
       span.works__link-text Посмотреть сайт
 
