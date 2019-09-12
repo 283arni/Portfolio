@@ -34,7 +34,7 @@
       li.review__createds-item
         .review__createds-container
           .review__createds-human.headline
-            img.review__createds-avatar(src="../../images/content/saban.png", alt="Аватарка")
+            img.review__createds-avatar(src="../../../images/content/saban.png", alt="Аватарка")
             .review__createds-data
               .review__createds-name Владимир Сабанцев
               .review__createds-position Преподаватель
@@ -50,7 +50,7 @@
 
 <style lang="postcss">
 
-  @import "../../styles/mixins.pcss";
+  @import "../../../styles/mixins.pcss";
 
   .review {
     margin-bottom: 40px;

@@ -8,19 +8,19 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    component: () => import("./components/auto.vue")
+    component: () => import("./components/pages/auto.vue")
   },
   {
     path: "/works",
-    component: () => import("./components/works.vue")
+    component: () => import("./components/pages/works.vue")
   },
   {
     path: "/reviews",
-    component: () => import("./components/review.vue")
+    component: () => import("./components/pages/review.vue")
   },  
   {
     path: "/about",
-    component: () => import("./components/about.vue")
+    component: () => import("./components/pages/about.vue")
   }
 ];
 

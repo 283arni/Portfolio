@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import $axios from "../request"
+import $axios from "../../request"
 
 export default {
   data() {
@@ -51,7 +51,7 @@ export default {
 
 <style lang="postcss">
 
-  @import "../../styles/mixins.pcss";
+  @import "../../../styles/mixins.pcss";
 
   .auto {
     position: fixed;
@@ -67,7 +67,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(rgba(#fff, 0.9)), url("../../images/content/bg_parallax.png");
+    background: linear-gradient(rgba(#fff, 0.9)), url("../../../images/content/bg_parallax.png");
     background-repeat: no-repeat;
     background-size: cover;
   }

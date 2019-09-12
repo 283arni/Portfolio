@@ -23,7 +23,7 @@ export default {
   }
 }
 </script>
->
+
 <style lang="postcss">
 
   @import "../../styles/mixins.pcss";
@@ -49,7 +49,7 @@ export default {
   }
 
   .nav__link {
-    display: flex; 
+    display: flex;
     height: 100%;
     align-items: center;
     justify-content: center;

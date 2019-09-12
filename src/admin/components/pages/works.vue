@@ -67,7 +67,7 @@
 
 <style lang="postcss">
 
-  @import "../../styles/mixins.pcss";
+  @import "../../../styles/mixins.pcss";
 
   .works__add {
     background-color: #fff;
@@ -227,7 +227,7 @@
     align-items: flex-end;
     justify-content: flex-end;
     min-height: 190px;
-    background: url("../../images/content/mini_slaid_1.jpg");
+    background: url("../../../images/content/mini_slaid_1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
   }

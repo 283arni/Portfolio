@@ -11,66 +11,62 @@
               button.btn-hover.svg.about__cross   
           .about__new
             input.input.about__new-skill(
-              type="text" 
-              v-model="skill.title"  
+              type="text"  
               placeholder="Новый навык"
               )
             input.input.about__pricents(
               type="text" 
-              v-model="skill.percent"
               placeholder="100 %"
               )
             button.btn-hover.about__btn-add +
       li.about__block(
         v-for="category in categories" 
         :key="category.id"
+      )
+        blockSkill(
+          :category='category',
+          :skills='filterSkillsbyIdCategory(category.id)'
         )
-        .about__add
-          .about__team-name.headline 
-            .about__front {{category.category}}
-            button.btn-hover.svg.about__pencil
-          table.about__skills
-            tr.about__row
-              td.about__tag HTML5
-              td 
-                span.about__number 100
-                span.about__static-ricent %
-              td.about__td-svg
-                button.btn-hover.svg.about__pencil
-                button.btn-hover.svg.about__trash
-          .about__new
-            input.input.about__new-skill(type="text" placeholder="Новый навык")
-            input.input.about__pricents(type="text" 
-            placeholder="100 %")
-            button.btn-hover.about__btn-add +
 </template>
 
 <script>
-import $axios from "../request"
-import {mapActions, mapState, mapMutations} from 'vuex';
+import $axios from "../../request"
+import {mapMutations, mapActions, mapState} from 'vuex';
+import { async } from 'q';
 
 export default {
 
-  data(){
-    return {
-      skill: {
-        title: "",
-        percent: "",
-        category: ''
-      }
-    }
+  components: {
+    blockSkill: () => import("../blockSkill")
   },
+
   computed: {
     ...mapState('skills', {
    categories: state => state.categories
+    }),
+    ...mapState('skills', {
+   skills: state => state.skills
     })
   },
   methods: {
-    ...mapMutations('skills',['addBlocks']),  
-
+    ...mapActions('skills',['fetchSkill']),
+    ...mapActions('skills',['addBlocks']),
+    filterSkillsbyIdCategory(categoryId) {
+      return this.skills.filter(skill => skill.category === categoryId)
+    }
   },
-  mounted() {
-    this.addBlocks()
+  async created() {
+    try{
+      await this.addBlocks();
+    } catch (error) {
+      alert(error.message)
+    }
+
+    try{
+      await this.fetchSkill();
+    } catch (error) {
+      alert(error.message)
+    }
   }
 }
 
@@ -78,7 +74,7 @@ export default {
 
 <style lang="postcss">
 
-  @import "../../styles/mixins.pcss";
+  @import "../../../styles/mixins.pcss";
 
   .about {
     margin-bottom: 50px;
@@ -116,6 +112,12 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    & .blocked {
+      opacity: 0.5;
+      pointer-events: none;
+      user-select: none;
+    }
   }
 
   .about__team-name {
@@ -123,6 +125,7 @@ export default {
     justify-content: space-between;
     font-weight: 600;
     font-size: 18px;
+    align-items: center;
   }
 
   .about__new {
@@ -132,6 +135,7 @@ export default {
 
   .about__icons {
     display: flex;
+    align-items: center;
   }
 
   .about__new-skill {
@@ -170,6 +174,7 @@ export default {
   .about__td-svg {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 
     & .about__pencil {
       margin-right: 10px;

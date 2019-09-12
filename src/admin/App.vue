@@ -200,15 +200,12 @@
     padding: 10px 0;
     transition: 0.3s;
     outline: none;
+    width: 100%;
 
     &:focus {
       border-bottom-color: #ea7400;
     }
   }
-
-  
-
-
 
   .bg-page {
     background: linear-gradient(rgba(#fff, 0.9)), url("../images/content/bg_parallax.png");
@@ -221,13 +218,6 @@
     }
   }
 
-  
-
-  
-
-  
-
-  
 </style>
 
 

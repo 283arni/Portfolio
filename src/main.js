@@ -16,5 +16,6 @@ if (form) {
   const validate = new Validate({
       element: '.j-form'
   });
-    validate.init();
+  
+  validate.init();
 }
