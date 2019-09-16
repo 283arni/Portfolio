@@ -16,7 +16,7 @@ const routes = [
   },
   {
     path: "/reviews",
-    component: () => import("./components/pages/review.vue")
+    component: () => import("./components/pages/reviews.vue")
   },  
   {
     path: "/about",

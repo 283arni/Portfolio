@@ -4,9 +4,11 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 import skills from "./modules/skills";
+import reviews from "./modules/reviews";
 
 export const store = new Vuex.Store({
   modules: {
-    skills
+    skills,
+    reviews
   }
 })

@@ -79,7 +79,6 @@ export default {
     },
     async changeCategory() {
       try {
-        console.log(this.editedCategory)
         await this.editCategory(this.changeNameCatigory);
       } catch (error) {
         alert(error.message);

@@ -60,7 +60,7 @@ export default {
     async editCategory({commit}, changeNameCatigory) {
       try {
         const response = await this.$axios.post(`/categories/${changeNameCatigory.id}`, changeNameCatigory.title)
-        commit('EDIT_CATEGORY', category)
+        commit('EDIT_CATEGORY', response.data.category)
       } catch (error) {
         throw new Error(
           error.response.data.message || error.response.data.error
@@ -88,7 +88,7 @@ export default {
     },
     EDIT_CATEGORY(state, editedCategory) {
       state.categories = state.categories.map(category => {
-        return category.id === editedCategory.id ? editedCategory.category : category
+        return category.id === editedCategory.id ? editedCategory : category
       })
     }
   }
