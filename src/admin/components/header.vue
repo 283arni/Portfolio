@@ -7,7 +7,7 @@
         .header__name Арнаутов Александр
         .header__title Панель администрирования
         .header__exit
-          a.header__exit-link.link-hover(href="#") Выйти
+          a.header__exit-link.link-hover(href="http://localhost:8081") Выйти
 </template>
 
 <style lang="postcss">

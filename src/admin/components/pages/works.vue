@@ -5,65 +5,44 @@
       .works__wrapper
         .headline
           .headline__title Редактирование работы
-        form.works__form
-          .works__container
-            .works__download
-              .works__download-text.name-form Перетащите или загрузите для загрузки изображения
-              button.works__download-btn.btn Загрузите
-            .works__description
-              label(type="name").works__label
-                .name-form Название
-                input.input.works__input#name(type="text" placeholder="Дизайн сайта для авто салона Porsche")
-              label(for="link").works__label 
-                .name-form Ссылка
-                input.input.works__input#link(type="text" placeholder="https://www.porsche-pulkovo.ru")
-              label(for="textarea").works__label
-                .name-form Описание
-                textarea.works__area.textarea#textarea(placeholder="Порше Центр Пулково - является официальным дилером марки Порше в Санкт-Петербурге и предоставляет полный цикл услуг по продаже и сервисному обслуживанию автомобилей")
-              label(for="tags").works__label
-                .name-form Добавление тэга
-                input.input.works__input#tags(type="text" placeholder="Jquery, Vue.js, HTML5" )
-              ul.works__list
-                li.works__item
-                  span.works__name-tag HTML
-                  button.btn-hover.works__cross
-                li.works__item
-                  span.works__name-tag CSS
-                  button.btn-hover.works__cross
-                li.works__item
-                  span.works__name-tag Javascript
-                  button.btn-hover.works__cross                                                
-          .btns
-            button.btn-hover.btn__cancellation Отмена
-            button.btn__save.btn Сохранить
+        worksForm
     ul.works__createds
       li.works__createds-item
         button.btn-hover.big-btn
           .big-btn__circle
             span.big-btn__pluse +
           .big-btn__text Добавить работу
-      li.works__createds-item.works__sample
-        .works__sample-img
-          ul.works__sample-list
-            li.works__sample-item
-              span.works__sample-tag HTML
-            li.works__sample-item
-              span.works__sample-tag CSS
-            li.works__sample-item
-              span.works__sample-tag Javascript                                 
-        .works__sample-container
-          .works__sample-title Сайт школы образования
-          .works__sample-text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-          .works__sample-wrapper
-            a.works__sample-link.link-hover(href="http://loftschool.ru" target="_blank") http://loftschool.ru
-          .edit
-            button.btn-hover.edit__rule
-              span.edit__row Править
-              .edit__pencil
-            button.btn-hover.edit__rule
-              span.edit__row Удалить
-              .edit__cross
+      li.works__createds-item.works__sample(
+        v-for="work in works"
+        :key='work.id'
+        )
+        worksBlocks(:work="work")
 </template>
+
+<script>
+import {mapActions, mapState} from 'vuex'
+export default {
+  components: {
+    worksForm: ()=> import ("../works-form"),
+    worksBlocks: ()=> import ("../works-blocks")
+  },
+  computed: {
+    ...mapState('works', {
+      works: state => state.works
+    })
+  },
+  methods: {
+    ...mapActions('works',['fetchWorks'])
+  },
+  async created() {
+    try{
+      await this.fetchWorks();
+    } catch (error) {
+      alert(error.message)
+    }
+  }
+}
+</script>
 
 <style lang="postcss">
 
@@ -129,8 +108,7 @@
   }
 
   .works__download-btn {
-    padding: 15px 40px;
-    
+    color: #ea7400;
   }
 
   .works__description {
@@ -140,7 +118,6 @@
   .works__label {
     display: block;
     margin-bottom: 30px;
-
   }
 
   .works__input,
@@ -158,20 +135,6 @@
     min-height: 146px;
   }
 
-  .works__list {
-    display: flex;
-  }
-
-  .works__item {
-    display: flex;
-    align-items: center;
-    font-size: 13px;
-    margin-right: 10px;
-    padding: 10px 18px;
-    background-color: #f4f4f4;
-    border-radius: 20px;
-  }
-
   .works__name-tag {
     margin-right: 10px;
   }
@@ -186,6 +149,8 @@
   .works__createds {
     display: flex;
     font-weight: 600;
+    flex-wrap: wrap;
+    justify-content: space-between;
     
     @include tablets {
       justify-content: space-between;
@@ -198,8 +163,7 @@
 
   .works__createds-item {
     width: 340px;
-    min-height: 556px;
-    margin-right: 30px;
+    margin-bottom: 30px;
     
     @include tablets {
       width: 48%;
@@ -234,18 +198,14 @@
 
   .works__sample-list {
     display: flex;
-    margin: 0 10px 10px 0;
+    flex-wrap: wrap;
   }
 
   .works__sample-item {
     background-color: #fff;
     padding: 5px 15px;
     border-radius: 15px;
-    margin-right: 10px;
-
-    &:last-child {
-      margin-right: 0;
-    }
+    margin: 5px;
   }
 
   .works__sample-container {

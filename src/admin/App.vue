@@ -69,17 +69,20 @@
       border-radius: 30px;
     }
 
-  }
+    &_save {
+      padding: 22px 40px;
+    }
 
-  .btn__cancellation {
-    color: #ea7400;
-    background-color: transparent;
-    font-weight: 600;
-    margin-right: 30px;
-  }
+    &_cancellation {
+      color: #ea7400;
+      background-color: transparent;
+      font-weight: 600;
+      margin-right: 30px;
+    }
 
-  .btn__save {
-    padding: 22px 40px;
+    &_form {
+      border: none;
+    }
   }
 
   .big-btn {
@@ -142,7 +145,7 @@
 
   .edit {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
   }
 
   .edit__rule {

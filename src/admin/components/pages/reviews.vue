@@ -12,27 +12,39 @@
           .big-btn__circle
             span.big-btn__pluse +
           .big-btn__text Добавить отзыв
-      li.review__createds-item
-        .review__createds-container
-          .review__createds-human.headline
-            img.review__createds-avatar(src="../../../images/content/saban.png", alt="Аватарка")
-            .review__createds-data
-              .review__createds-name Владимир Сабанцев
-              .review__createds-position Преподаватель
-          .review__createds-text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-          .edit
-            button.btn-hover.edit__rule
-              span.edit__row Править
-              .edit__pencil
-            button.btn-hover.edit__rule
-              span.edit__row Удалить
-              .edit__cross
+      li.review__createds-item(
+        v-for="review in reviews"
+        :key="review.id"
+      )
+        reviewsBlocks(
+          :review="review"
+        )
+
 </template>
 
 <script>
+
+import {mapState, mapActions} from 'vuex';
+
 export default {
   components: {
-    reviewForm: ()=> import ("../review-form")
+    reviewForm: ()=> import ("../review-form"),
+    reviewsBlocks: ()=> import ("../reviews-blocks")
+  },
+  computed: {
+    ...mapState('reviews', {
+      reviews: state => state.reviews
+    })
+  },
+  methods: {
+    ...mapActions('reviews',['fetchReviews'])
+  },
+  async created() {
+    try{
+      await this.fetchReviews();
+    } catch (error) {
+      alert(error.message)
+    }
   }
 }
 </script>
@@ -59,7 +71,4 @@ export default {
     font-weight: 600;
     box-shadow: 4.1px 2.9px 20px 0 rgba(0, 0, 0, 0.07);
   }
-
-  
-
 </style>

@@ -1,10 +1,14 @@
 <template lang="pug">
-  form.review__form#form-rewiew
+  form.review__form#form-rewiew(ref="formReview")
     .review__container
       .review__avatar
-        .review__circle
+        .review__circle#picture
           .review__svg
-        input.review__add-photo#file(type="file")
+        input.review__add-photo#file(
+          type="file" 
+          ref="file" 
+          @change='changePhoto'
+          )
       .review__inputs
         .review__person
           label(for="person").review__label.review__label_indent
@@ -12,58 +16,68 @@
             input.input.review__input#person(
               type="text" 
               placeholder="Ковальчук Дмитрий"
+              v-model="person"
               )
           label(for="position").review__label
             .name-form Титул автора
             input.input.review__input#position(
               type="text" 
               placeholder="Основатель LoftSchool"
+              v-model="position"
               )
         label(for="review-textarea").review__label
           .name-form Отзыв
           textarea.review__textarea.textarea#review-textarea(
             type="textarea" 
             placeholder="Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!"
+            v-model="textarea"
             )
     .btns
-      button.btn-hover.btn__cancellation Отмена
-      input.btn__save.btn(@click="addReview" type="submit" value="Сохранить") 
+      input.btn-hover.btn_cancellation.btn_form(type="reset" value="Отмена") 
+      input.btn.btn_save.btn_form(@click="addReview" type="submit" value="Сохранить")
 </template>
 
 <script>
-import {mapActions} from 'vuex';
+import {mapActions, mapState} from 'vuex';
 import $axios from "../request";
 
 export default {
   data() {
     return {
-      // coment: {
-      //   photo: '',
-      //   author: '',
-      //   occ: '',
-      //   text: ''
-      // }
+      photo: '',
+      position: '',
+      person: '',
+      textarea: ''
     }
   },
   methods: {
-    ...mapActions('reviews',['addNewReview']),
-    onFileChange(e) {
-      this.coment.photo = e.target.files[0];
-    },
-    async addReview(e) {
+    ...mapActions('reviews', ['addNewReview']),
+    async addReview() {
       try {
-        const data = new FormData(document.getElementById('form-rewiew'))
-        var imagefile = document.querySelector('#file')
-        var person = document.querySelector('#person').value
-        var position = document.querySelector('#position').value
-        var textarea = document.querySelector('#review-textarea').value
-        data.append('photo', imagefile.files[0])
-        data.append('author', person)
-        data.append('occ', position)
-        data.append('text', textarea)
+        const data = new FormData()
+
+        data.append('photo', this.photo)
+        data.append('author', this.person)
+        data.append('occ', this.position)
+        data.append('text', this.textarea)
+
         await this.addNewReview(data)
+        this.$refs.formReview.reset();
       } catch (error) {
         alert(error.message)
+      }
+    },
+    changePhoto() {
+      this.photo = this.$refs.file.files[0]
+      let reader = new FileReader()
+      let elem = document.getElementById('picture')
+      reader.readAsDataURL(this.photo)
+
+      reader.onloadend = function() {
+        elem.firstChild.remove()
+        let img = document.createElement('img')
+        img.src = reader.result
+        elem.append(img)
       }
     }
   }
@@ -73,6 +87,7 @@ export default {
 <style lang="postcss">
 
 @import "../../styles/mixins.pcss";
+
 
 .review__form {
   width: 85%;
@@ -115,6 +130,15 @@ export default {
   align-items: center;
   justify-content: center;
   margin-bottom: 30px;
+  overflow: hidden;
+
+  & img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+  }
 }
 
 .review__svg {
@@ -123,14 +147,11 @@ export default {
   background: svg-load("avatar.svg", fill="#ffffff", width="100%", height="100%");
   background-repeat: no-repeat;
 }
-
 .review__add-photo {
   color: #ea7400;
 }
-
 .review__inputs {
   flex: 3;
-
 }
 
 .review__label {
@@ -186,11 +207,9 @@ export default {
 
 .review__createds {
   display: flex;
+  flex-wrap: wrap;
   font-weight: 600;
-
-  @include tablets {
-    justify-content: space-between;
-  }
+  justify-content: space-between;
 
   @include phones {
     display: block;
@@ -198,14 +217,10 @@ export default {
 }
 
 .review__createds-item {
-  width: 340px;
-  min-height: 380px;
-  margin-right: 30px;
+  width: 31%;
+  min-height: 338px;
   box-shadow: 4.1px 2.9px 20px 0 rgba(0, 0, 0, 0.07);
-
-  &:last-child {
-    margin: 0;
-  }
+  margin-bottom: 30px;
 
   @include tablets {
     width: 48%;
